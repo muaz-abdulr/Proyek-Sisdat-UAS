@@ -92,6 +92,7 @@ namespace Sisdat_Movie_List
 
         #endregion
 
+        //object yang ada di UI
         private System.Windows.Forms.Button SearchButton;
         private System.Windows.Forms.Label ActorLabel;
         private System.Windows.Forms.ListBox ActorFound;

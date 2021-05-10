@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 
 namespace Sisdat_Movie_List
 {
-    public class RecordCollector
+    public class RecordCollector //menampung hasil query
     {
-        public class Actors
+        public class Actors //isi dari attribut tabel Actors yang menampung query
         {
             public int actor_id {get; set;}
             public string actor_name { get; set; }
             public string gender { get; set; }
             public int age { get; set; }
             public string bio { get; set; }
-            public string ActorsInfo
+            public string ActorsInfo //yang akan dipanggil di UI (Dashboard.cs)
             {
                 get
                 {
@@ -23,5 +23,6 @@ namespace Sisdat_Movie_List
                 }
             }
         }
+        //disini tambah class baru jika ingin menambah output query dengan isi yang berbeda
     }
 }
