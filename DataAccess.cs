@@ -10,11 +10,18 @@ namespace Sisdat_Movie_List
 {
     public class DataAccess
     {
-        public List<RecordCollector.Actors> GetActor(string actor_name) //menampung output dari query dalam list yang didefinisi di RecordCollector.cs
+        IDbConnection connection = new System.Data.SqlClient.SqlConnection(ConnectorToDataSource.CnnVal("Sisdat_Movie_List.Properties.Settings.MovieList"));
+        public List<RecordCollector.columnsName> GetColumns(string table_name)
         {
-            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(ConnectorToDataSource.CnnVal("Sisdat_Movie_List.Properties.Settings.MovieList"))) //pemanggilan CnnVAl() dengan argumen nama db di App.config
             {
-                var output = connection.Query<RecordCollector.Actors>($"select * from actors where actor_name = '{actor_name}'").ToList(); //query ke database
+                var output = connection.Query<RecordCollector.columnsName>($"select column_name from information_schema.columns where table_name = '{table_name}'").ToList();
+                return output;
+            }
+        }
+        public List<dynamic> GetRecord(string table_name, string column_name, string column_value) //fungsi yang memanggil query dan menyimpan output dalam list yang didefinisi di RecordCollector.cs
+        {
+            {
+                List<dynamic> output = connection.Query($"select * from {table_name} where {column_name} = '{column_value}'").ToList();
                 return output; //return output dari query
             }
         }

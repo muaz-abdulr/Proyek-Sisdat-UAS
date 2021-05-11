@@ -30,58 +30,73 @@ namespace Sisdat_Movie_List
         private void InitializeComponent()
         {
             this.SearchButton = new System.Windows.Forms.Button();
-            this.ActorLabel = new System.Windows.Forms.Label();
-            this.ActorFound = new System.Windows.Forms.ListBox();
-            this.ActorSearchBox = new System.Windows.Forms.TextBox();
+            this.RecordFound = new System.Windows.Forms.ListBox();
+            this.SearchBox = new System.Windows.Forms.TextBox();
+            this.tableChoices = new System.Windows.Forms.ComboBox();
+            this.columnChoices = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // SearchButton
             // 
             this.SearchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SearchButton.Location = new System.Drawing.Point(214, 137);
+            this.SearchButton.Location = new System.Drawing.Point(134, 146);
             this.SearchButton.Name = "SearchButton";
-            this.SearchButton.Size = new System.Drawing.Size(349, 32);
+            this.SearchButton.Size = new System.Drawing.Size(156, 32);
             this.SearchButton.TabIndex = 0;
             this.SearchButton.Text = "Search";
             this.SearchButton.UseVisualStyleBackColor = true;
             this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
-            // ActorLabel
+            // RecordFound
             // 
-            this.ActorLabel.AutoSize = true;
-            this.ActorLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ActorLabel.Location = new System.Drawing.Point(119, 96);
-            this.ActorLabel.Name = "ActorLabel";
-            this.ActorLabel.Size = new System.Drawing.Size(47, 20);
-            this.ActorLabel.TabIndex = 1;
-            this.ActorLabel.Text = "Actor";
+            this.RecordFound.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RecordFound.FormattingEnabled = true;
+            this.RecordFound.ItemHeight = 20;
+            this.RecordFound.Location = new System.Drawing.Point(134, 190);
+            this.RecordFound.Name = "RecordFound";
+            this.RecordFound.Size = new System.Drawing.Size(536, 144);
+            this.RecordFound.TabIndex = 2;
             // 
-            // ActorFound
+            // SearchBox
             // 
-            this.ActorFound.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ActorFound.FormattingEnabled = true;
-            this.ActorFound.ItemHeight = 20;
-            this.ActorFound.Location = new System.Drawing.Point(123, 175);
-            this.ActorFound.Name = "ActorFound";
-            this.ActorFound.Size = new System.Drawing.Size(536, 144);
-            this.ActorFound.TabIndex = 2;
+            this.SearchBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchBox.Location = new System.Drawing.Point(357, 152);
+            this.SearchBox.Name = "SearchBox";
+            this.SearchBox.Size = new System.Drawing.Size(313, 26);
+            this.SearchBox.TabIndex = 3;
             // 
-            // ActorSearchBox
+            // tableChoices
             // 
-            this.ActorSearchBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ActorSearchBox.Location = new System.Drawing.Point(226, 93);
-            this.ActorSearchBox.Name = "ActorSearchBox";
-            this.ActorSearchBox.Size = new System.Drawing.Size(433, 26);
-            this.ActorSearchBox.TabIndex = 3;
+            this.tableChoices.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tableChoices.FormattingEnabled = true;
+            this.tableChoices.Items.AddRange(new object[] {
+            "Actors",
+            "Directors",
+            "Films"});
+            this.tableChoices.Location = new System.Drawing.Point(453, 61);
+            this.tableChoices.Name = "tableChoices";
+            this.tableChoices.Size = new System.Drawing.Size(217, 28);
+            this.tableChoices.TabIndex = 4;
+            this.tableChoices.SelectedIndexChanged += new System.EventHandler(this.tableChoices_SelectedIndexChanged);
+            // 
+            // columnChoices
+            // 
+            this.columnChoices.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.columnChoices.FormattingEnabled = true;
+            this.columnChoices.Location = new System.Drawing.Point(453, 104);
+            this.columnChoices.Name = "columnChoices";
+            this.columnChoices.Size = new System.Drawing.Size(217, 28);
+            this.columnChoices.TabIndex = 5;
             // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(841, 440);
-            this.Controls.Add(this.ActorSearchBox);
-            this.Controls.Add(this.ActorFound);
-            this.Controls.Add(this.ActorLabel);
+            this.Controls.Add(this.columnChoices);
+            this.Controls.Add(this.tableChoices);
+            this.Controls.Add(this.SearchBox);
+            this.Controls.Add(this.RecordFound);
             this.Controls.Add(this.SearchButton);
             this.Name = "Dashboard";
             this.Text = "Simple Search Query";
@@ -94,9 +109,10 @@ namespace Sisdat_Movie_List
 
         //object yang ada di UI
         private System.Windows.Forms.Button SearchButton;
-        private System.Windows.Forms.Label ActorLabel;
-        private System.Windows.Forms.ListBox ActorFound;
-        private System.Windows.Forms.TextBox ActorSearchBox;
+        private System.Windows.Forms.ListBox RecordFound;
+        private System.Windows.Forms.TextBox SearchBox;
+        private System.Windows.Forms.ComboBox tableChoices;
+        private System.Windows.Forms.ComboBox columnChoices;
     }
 }
 
