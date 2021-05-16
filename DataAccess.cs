@@ -10,7 +10,7 @@ namespace Sisdat_Movie_List
 {
     public class DataAccess
     {
-        IDbConnection connection = new System.Data.SqlClient.SqlConnection(ConnectorToDataSource.CnnVal("Sisdat_Movie_List.Properties.Settings.Database1ConnectionString"));
+        IDbConnection connection = new System.Data.SqlClient.SqlConnection(ConnectorToDataSource.CnnVal("Sisdat_Movie_List.Properties.Settings.MovieListConnectionString"));
         public List<RecordCollector.columnsName> GetColumns(string table_name)
         {
             {
