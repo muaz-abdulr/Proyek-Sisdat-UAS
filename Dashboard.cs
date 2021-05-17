@@ -15,20 +15,11 @@ namespace Sisdat_Movie_List
         public Dashboard()
         {
             InitializeComponent();
-        }
-        private void tableChoices_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            DataAccess columnsData = new DataAccess();
-            List<RecordCollector.columnsName> columns = columnsData.GetColumns(tableChoices.Text);
-            columnChoices.DataSource = columns;
-            columnChoices.DisplayMember = "column_name";
-        }
-        private void SearchButton_Click(object sender, EventArgs e)
-        {
-            DataAccess recordData = new DataAccess();
-            RecordCollector func = new RecordCollector();
-            var records = recordData.GetRecord(tableChoices.Text, columnChoices.Text, SearchBox.Text);
-            RecordFound.DataSource = func.Record(records);
+            DataAccess x = new DataAccess();
+            RecordCollector y = new RecordCollector();
+            var recordList = x.GetRecord("films");
+            var output = y.Record(recordList);
+            RecordList.DataSource = output;
         }
     }
 }

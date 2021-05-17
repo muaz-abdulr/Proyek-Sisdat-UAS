@@ -18,10 +18,10 @@ namespace Sisdat_Movie_List
                 return output;
             }
         }
-        public List<dynamic> GetRecord(string table_name, string column_name, string column_value) //fungsi yang memanggil query dan menyimpan output dalam list yang didefinisi di RecordCollector.cs
+        public List<dynamic> GetRecord(string table_name) //fungsi yang memanggil query dan menyimpan output dalam list yang didefinisi di RecordCollector.cs
         {
             {
-                List<dynamic> output = connection.Query($"select * from {table_name} where {column_name} = '{column_value}'").ToList();
+                List<dynamic> output = connection.Query($"select * from {table_name}").ToList();
                 return output; //return output dari query
             }
         }
