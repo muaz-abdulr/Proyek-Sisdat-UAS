@@ -38,7 +38,7 @@ namespace Sisdat_Movie_List
             this.topRight = new System.Windows.Forms.Panel();
             this.title = new System.Windows.Forms.Label();
             this.entityID = new System.Windows.Forms.ListBox();
-            this.entityDesc = new System.Windows.Forms.ListBox();
+            this.DescTextBox = new System.Windows.Forms.RichTextBox();
             this.sideMenu.SuspendLayout();
             this.topRight.SuspendLayout();
             this.SuspendLayout();
@@ -153,27 +153,25 @@ namespace Sisdat_Movie_List
             // 
             // entityID
             // 
-            this.entityID.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.entityID.Dock = System.Windows.Forms.DockStyle.Top;
             this.entityID.Font = new System.Drawing.Font("Roboto Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.entityID.FormattingEnabled = true;
             this.entityID.ItemHeight = 23;
-            this.entityID.Location = new System.Drawing.Point(312, 181);
+            this.entityID.Location = new System.Drawing.Point(261, 130);
             this.entityID.Name = "entityID";
-            this.entityID.Size = new System.Drawing.Size(823, 234);
+            this.entityID.Size = new System.Drawing.Size(928, 257);
             this.entityID.TabIndex = 3;
             this.entityID.SelectedIndexChanged += new System.EventHandler(this.entityID_SelectedIndexChanged);
             // 
-            // entityDesc
+            // DescTextBox
             // 
-            this.entityDesc.Font = new System.Drawing.Font("Roboto Light", 14.25F);
-            this.entityDesc.FormattingEnabled = true;
-            this.entityDesc.ItemHeight = 23;
-            this.entityDesc.Location = new System.Drawing.Point(312, 448);
-            this.entityDesc.Name = "entityDesc";
-            this.entityDesc.Size = new System.Drawing.Size(823, 119);
-            this.entityDesc.TabIndex = 4;
+            this.DescTextBox.Dock = System.Windows.Forms.DockStyle.Top;
+            this.DescTextBox.Font = new System.Drawing.Font("Roboto Light", 14.25F);
+            this.DescTextBox.Location = new System.Drawing.Point(261, 387);
+            this.DescTextBox.Name = "DescTextBox";
+            this.DescTextBox.Size = new System.Drawing.Size(928, 270);
+            this.DescTextBox.TabIndex = 5;
+            this.DescTextBox.Text = "";
             // 
             // Dashboard
             // 
@@ -181,7 +179,7 @@ namespace Sisdat_Movie_List
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(230)))));
             this.ClientSize = new System.Drawing.Size(1189, 657);
-            this.Controls.Add(this.entityDesc);
+            this.Controls.Add(this.DescTextBox);
             this.Controls.Add(this.entityID);
             this.Controls.Add(this.topRight);
             this.Controls.Add(this.sideMenu);
@@ -207,7 +205,7 @@ namespace Sisdat_Movie_List
         private System.Windows.Forms.Button searchForGenre;
         private System.Windows.Forms.Button searchForDirector;
         private System.Windows.Forms.ListBox entityID;
-        private System.Windows.Forms.ListBox entityDesc;
+        private System.Windows.Forms.RichTextBox DescTextBox;
     }
 }
 
