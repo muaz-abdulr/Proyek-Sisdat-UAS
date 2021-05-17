@@ -25,7 +25,8 @@ namespace Sisdat_Movie_List
         {
             DataAccess mov = new DataAccess();
             List<RecordCollector.movie> movData = mov.getMovieData();
-            entityDesc.DataSource = movData;
+            entityDesc.Items.Clear();
+            entityDesc.Items.Add(entityID.SelectedItem);
             entityDesc.DisplayMember = "MovieDesc";
         }
     }
