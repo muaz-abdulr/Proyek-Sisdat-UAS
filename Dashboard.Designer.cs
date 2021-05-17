@@ -30,14 +30,15 @@ namespace Sisdat_Movie_List
         private void InitializeComponent()
         {
             this.sideMenu = new System.Windows.Forms.Panel();
+            this.searchForGenre = new System.Windows.Forms.Button();
+            this.searchForDirector = new System.Windows.Forms.Button();
+            this.searchForActor = new System.Windows.Forms.Button();
+            this.searchForMovie = new System.Windows.Forms.Button();
             this.topLeft = new System.Windows.Forms.Panel();
             this.topRight = new System.Windows.Forms.Panel();
             this.title = new System.Windows.Forms.Label();
-            this.searchForMovie = new System.Windows.Forms.Button();
-            this.searchForActor = new System.Windows.Forms.Button();
-            this.searchForDirector = new System.Windows.Forms.Button();
-            this.searchForGenre = new System.Windows.Forms.Button();
-            this.RecordList = new System.Windows.Forms.ListBox();
+            this.entityID = new System.Windows.Forms.ListBox();
+            this.entityDesc = new System.Windows.Forms.ListBox();
             this.sideMenu.SuspendLayout();
             this.topRight.SuspendLayout();
             this.SuspendLayout();
@@ -55,6 +56,65 @@ namespace Sisdat_Movie_List
             this.sideMenu.Name = "sideMenu";
             this.sideMenu.Size = new System.Drawing.Size(261, 657);
             this.sideMenu.TabIndex = 0;
+            // 
+            // searchForGenre
+            // 
+            this.searchForGenre.Dock = System.Windows.Forms.DockStyle.Top;
+            this.searchForGenre.FlatAppearance.BorderSize = 0;
+            this.searchForGenre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.searchForGenre.Font = new System.Drawing.Font("Roboto Medium", 20F, System.Drawing.FontStyle.Bold);
+            this.searchForGenre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(230)))));
+            this.searchForGenre.Location = new System.Drawing.Point(0, 394);
+            this.searchForGenre.Margin = new System.Windows.Forms.Padding(0);
+            this.searchForGenre.Name = "searchForGenre";
+            this.searchForGenre.Size = new System.Drawing.Size(261, 88);
+            this.searchForGenre.TabIndex = 5;
+            this.searchForGenre.Text = "Genre";
+            this.searchForGenre.UseVisualStyleBackColor = true;
+            // 
+            // searchForDirector
+            // 
+            this.searchForDirector.Dock = System.Windows.Forms.DockStyle.Top;
+            this.searchForDirector.FlatAppearance.BorderSize = 0;
+            this.searchForDirector.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.searchForDirector.Font = new System.Drawing.Font("Roboto Medium", 20F, System.Drawing.FontStyle.Bold);
+            this.searchForDirector.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(230)))));
+            this.searchForDirector.Location = new System.Drawing.Point(0, 306);
+            this.searchForDirector.Margin = new System.Windows.Forms.Padding(0);
+            this.searchForDirector.Name = "searchForDirector";
+            this.searchForDirector.Size = new System.Drawing.Size(261, 88);
+            this.searchForDirector.TabIndex = 4;
+            this.searchForDirector.Text = "Director";
+            this.searchForDirector.UseVisualStyleBackColor = true;
+            // 
+            // searchForActor
+            // 
+            this.searchForActor.Dock = System.Windows.Forms.DockStyle.Top;
+            this.searchForActor.FlatAppearance.BorderSize = 0;
+            this.searchForActor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.searchForActor.Font = new System.Drawing.Font("Roboto Medium", 20F, System.Drawing.FontStyle.Bold);
+            this.searchForActor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(230)))));
+            this.searchForActor.Location = new System.Drawing.Point(0, 218);
+            this.searchForActor.Margin = new System.Windows.Forms.Padding(0);
+            this.searchForActor.Name = "searchForActor";
+            this.searchForActor.Size = new System.Drawing.Size(261, 88);
+            this.searchForActor.TabIndex = 3;
+            this.searchForActor.Text = "Actor";
+            this.searchForActor.UseVisualStyleBackColor = true;
+            // 
+            // searchForMovie
+            // 
+            this.searchForMovie.Dock = System.Windows.Forms.DockStyle.Top;
+            this.searchForMovie.FlatAppearance.BorderSize = 0;
+            this.searchForMovie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.searchForMovie.Font = new System.Drawing.Font("Roboto Medium", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchForMovie.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(230)))));
+            this.searchForMovie.Location = new System.Drawing.Point(0, 130);
+            this.searchForMovie.Name = "searchForMovie";
+            this.searchForMovie.Size = new System.Drawing.Size(261, 88);
+            this.searchForMovie.TabIndex = 2;
+            this.searchForMovie.Text = "Movie";
+            this.searchForMovie.UseVisualStyleBackColor = true;
             // 
             // topLeft
             // 
@@ -91,74 +151,29 @@ namespace Sisdat_Movie_List
             this.title.Text = "MOVIE DATABASE";
             this.title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // searchForMovie
+            // entityID
             // 
-            this.searchForMovie.Dock = System.Windows.Forms.DockStyle.Top;
-            this.searchForMovie.FlatAppearance.BorderSize = 0;
-            this.searchForMovie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.searchForMovie.Font = new System.Drawing.Font("Roboto Medium", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchForMovie.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(230)))));
-            this.searchForMovie.Location = new System.Drawing.Point(0, 130);
-            this.searchForMovie.Name = "searchForMovie";
-            this.searchForMovie.Size = new System.Drawing.Size(261, 88);
-            this.searchForMovie.TabIndex = 2;
-            this.searchForMovie.Text = "Movie";
-            this.searchForMovie.UseVisualStyleBackColor = true;
+            this.entityID.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.entityID.Font = new System.Drawing.Font("Roboto Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.entityID.FormattingEnabled = true;
+            this.entityID.ItemHeight = 23;
+            this.entityID.Location = new System.Drawing.Point(312, 181);
+            this.entityID.Name = "entityID";
+            this.entityID.Size = new System.Drawing.Size(823, 234);
+            this.entityID.TabIndex = 3;
+            this.entityID.SelectedIndexChanged += new System.EventHandler(this.entityID_SelectedIndexChanged);
             // 
-            // searchForActor
+            // entityDesc
             // 
-            this.searchForActor.Dock = System.Windows.Forms.DockStyle.Top;
-            this.searchForActor.FlatAppearance.BorderSize = 0;
-            this.searchForActor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.searchForActor.Font = new System.Drawing.Font("Roboto Medium", 20F, System.Drawing.FontStyle.Bold);
-            this.searchForActor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(230)))));
-            this.searchForActor.Location = new System.Drawing.Point(0, 218);
-            this.searchForActor.Margin = new System.Windows.Forms.Padding(0);
-            this.searchForActor.Name = "searchForActor";
-            this.searchForActor.Size = new System.Drawing.Size(261, 88);
-            this.searchForActor.TabIndex = 3;
-            this.searchForActor.Text = "Actor";
-            this.searchForActor.UseVisualStyleBackColor = true;
-            // 
-            // searchForDirector
-            // 
-            this.searchForDirector.Dock = System.Windows.Forms.DockStyle.Top;
-            this.searchForDirector.FlatAppearance.BorderSize = 0;
-            this.searchForDirector.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.searchForDirector.Font = new System.Drawing.Font("Roboto Medium", 20F, System.Drawing.FontStyle.Bold);
-            this.searchForDirector.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(230)))));
-            this.searchForDirector.Location = new System.Drawing.Point(0, 306);
-            this.searchForDirector.Margin = new System.Windows.Forms.Padding(0);
-            this.searchForDirector.Name = "searchForDirector";
-            this.searchForDirector.Size = new System.Drawing.Size(261, 88);
-            this.searchForDirector.TabIndex = 4;
-            this.searchForDirector.Text = "Director";
-            this.searchForDirector.UseVisualStyleBackColor = true;
-            // 
-            // searchForGenre
-            // 
-            this.searchForGenre.Dock = System.Windows.Forms.DockStyle.Top;
-            this.searchForGenre.FlatAppearance.BorderSize = 0;
-            this.searchForGenre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.searchForGenre.Font = new System.Drawing.Font("Roboto Medium", 20F, System.Drawing.FontStyle.Bold);
-            this.searchForGenre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(230)))));
-            this.searchForGenre.Location = new System.Drawing.Point(0, 394);
-            this.searchForGenre.Margin = new System.Windows.Forms.Padding(0);
-            this.searchForGenre.Name = "searchForGenre";
-            this.searchForGenre.Size = new System.Drawing.Size(261, 88);
-            this.searchForGenre.TabIndex = 5;
-            this.searchForGenre.Text = "Genre";
-            this.searchForGenre.UseVisualStyleBackColor = true;
-            // 
-            // RecordList
-            // 
-            this.RecordList.Font = new System.Drawing.Font("Roboto Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RecordList.FormattingEnabled = true;
-            this.RecordList.ItemHeight = 23;
-            this.RecordList.Location = new System.Drawing.Point(312, 181);
-            this.RecordList.Name = "RecordList";
-            this.RecordList.Size = new System.Drawing.Size(823, 418);
-            this.RecordList.TabIndex = 3;
+            this.entityDesc.Font = new System.Drawing.Font("Roboto Light", 14.25F);
+            this.entityDesc.FormattingEnabled = true;
+            this.entityDesc.ItemHeight = 23;
+            this.entityDesc.Location = new System.Drawing.Point(312, 448);
+            this.entityDesc.Name = "entityDesc";
+            this.entityDesc.Size = new System.Drawing.Size(823, 119);
+            this.entityDesc.TabIndex = 4;
             // 
             // Dashboard
             // 
@@ -166,7 +181,8 @@ namespace Sisdat_Movie_List
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(230)))));
             this.ClientSize = new System.Drawing.Size(1189, 657);
-            this.Controls.Add(this.RecordList);
+            this.Controls.Add(this.entityDesc);
+            this.Controls.Add(this.entityID);
             this.Controls.Add(this.topRight);
             this.Controls.Add(this.sideMenu);
             this.MinimumSize = new System.Drawing.Size(1205, 696);
@@ -190,7 +206,8 @@ namespace Sisdat_Movie_List
         private System.Windows.Forms.Button searchForMovie;
         private System.Windows.Forms.Button searchForGenre;
         private System.Windows.Forms.Button searchForDirector;
-        private System.Windows.Forms.ListBox RecordList;
+        private System.Windows.Forms.ListBox entityID;
+        private System.Windows.Forms.ListBox entityDesc;
     }
 }
 

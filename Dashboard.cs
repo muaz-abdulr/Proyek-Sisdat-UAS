@@ -15,11 +15,18 @@ namespace Sisdat_Movie_List
         public Dashboard()
         {
             InitializeComponent();
-            DataAccess x = new DataAccess();
-            RecordCollector y = new RecordCollector();
-            var recordList = x.GetRecord("films");
-            var output = y.Record(recordList);
-            RecordList.DataSource = output;
+            DataAccess mov = new DataAccess();
+            List<RecordCollector.movie> movData = mov.getMovieData();
+            entityID.DataSource = movData;
+            entityID.DisplayMember = "MovieDataID";
+        }
+
+        private void entityID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            DataAccess mov = new DataAccess();
+            List<RecordCollector.movie> movData = mov.getMovieData();
+            entityDesc.DataSource = movData;
+            entityDesc.DisplayMember = "MovieDesc";
         }
     }
 }

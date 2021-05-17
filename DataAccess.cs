@@ -25,5 +25,10 @@ namespace Sisdat_Movie_List
                 return output; //return output dari query
             }
         }
+        public List<RecordCollector.movie> getMovieData()
+        {
+            List<RecordCollector.movie> output = connection.Query<RecordCollector.movie>($"select * from films").ToList();
+            return output;
+        }
     }
 }
