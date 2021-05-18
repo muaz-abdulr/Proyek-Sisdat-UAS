@@ -35,15 +35,22 @@ namespace Sisdat_Movie_List
             public string gender { get; set; }
             public int age { get; set; }
             public string bio { get; set; }
-            public string ActorsInfo                            //format yang dipakai di UI (Dashboard.cs)
+            public string ActorInfo                            //format yang dipakai di UI (Dashboard.cs)
             {
                 get
                 {
-                    return $"{ actor_id } { actor_name } { gender } { age } { bio }";
+                    return $" Actor ID : { actor_id }, Actor Name : { actor_name }, Gender : { gender }, Age: { age }";
+                }
+            }
+            public string ActorBIO
+            { 
+                get
+                {
+                    return $" { bio }";
                 }
             }
         }
-        public class movie                                     //isi dari attribut tabel Actors yang menampung query
+        public class movie2                                    //isi dari attribut tabel Actors yang menampung query
         {
             public int film_id { get; set; }
             public string film_title { get; set; }

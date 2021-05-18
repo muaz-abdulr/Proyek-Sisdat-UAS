@@ -62,7 +62,7 @@ namespace Sisdat_Movie_List
             this.searchForGenre.Dock = System.Windows.Forms.DockStyle.Top;
             this.searchForGenre.FlatAppearance.BorderSize = 0;
             this.searchForGenre.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.searchForGenre.Font = new System.Drawing.Font("Roboto Medium", 20F, System.Drawing.FontStyle.Bold);
+            this.searchForGenre.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
             this.searchForGenre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(230)))));
             this.searchForGenre.Location = new System.Drawing.Point(0, 394);
             this.searchForGenre.Margin = new System.Windows.Forms.Padding(0);
@@ -77,7 +77,7 @@ namespace Sisdat_Movie_List
             this.searchForDirector.Dock = System.Windows.Forms.DockStyle.Top;
             this.searchForDirector.FlatAppearance.BorderSize = 0;
             this.searchForDirector.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.searchForDirector.Font = new System.Drawing.Font("Roboto Medium", 20F, System.Drawing.FontStyle.Bold);
+            this.searchForDirector.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
             this.searchForDirector.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(230)))));
             this.searchForDirector.Location = new System.Drawing.Point(0, 306);
             this.searchForDirector.Margin = new System.Windows.Forms.Padding(0);
@@ -92,7 +92,7 @@ namespace Sisdat_Movie_List
             this.searchForActor.Dock = System.Windows.Forms.DockStyle.Top;
             this.searchForActor.FlatAppearance.BorderSize = 0;
             this.searchForActor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.searchForActor.Font = new System.Drawing.Font("Roboto Medium", 20F, System.Drawing.FontStyle.Bold);
+            this.searchForActor.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
             this.searchForActor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(230)))));
             this.searchForActor.Location = new System.Drawing.Point(0, 218);
             this.searchForActor.Margin = new System.Windows.Forms.Padding(0);
@@ -101,13 +101,14 @@ namespace Sisdat_Movie_List
             this.searchForActor.TabIndex = 3;
             this.searchForActor.Text = "Actor";
             this.searchForActor.UseVisualStyleBackColor = true;
+            this.searchForActor.Click += new System.EventHandler(this.searchForActor_Click);
             // 
             // searchForMovie
             // 
             this.searchForMovie.Dock = System.Windows.Forms.DockStyle.Top;
             this.searchForMovie.FlatAppearance.BorderSize = 0;
             this.searchForMovie.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.searchForMovie.Font = new System.Drawing.Font("Roboto Medium", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchForMovie.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchForMovie.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(230)))));
             this.searchForMovie.Location = new System.Drawing.Point(0, 130);
             this.searchForMovie.Name = "searchForMovie";
@@ -115,6 +116,7 @@ namespace Sisdat_Movie_List
             this.searchForMovie.TabIndex = 2;
             this.searchForMovie.Text = "Movie";
             this.searchForMovie.UseVisualStyleBackColor = true;
+            this.searchForMovie.Click += new System.EventHandler(this.searchForMovie_Click);
             // 
             // topLeft
             // 
@@ -141,12 +143,12 @@ namespace Sisdat_Movie_List
             // 
             this.title.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.title.AutoSize = true;
-            this.title.Font = new System.Drawing.Font("Roboto", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.title.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.title.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(230)))));
             this.title.Location = new System.Drawing.Point(310, 41);
             this.title.Margin = new System.Windows.Forms.Padding(0);
             this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(356, 48);
+            this.title.Size = new System.Drawing.Size(388, 46);
             this.title.TabIndex = 0;
             this.title.Text = "MOVIE DATABASE";
             this.title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -154,20 +156,20 @@ namespace Sisdat_Movie_List
             // entityID
             // 
             this.entityID.Dock = System.Windows.Forms.DockStyle.Top;
-            this.entityID.Font = new System.Drawing.Font("Roboto Light", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.entityID.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.entityID.FormattingEnabled = true;
-            this.entityID.ItemHeight = 23;
+            this.entityID.ItemHeight = 24;
             this.entityID.Location = new System.Drawing.Point(261, 130);
             this.entityID.Name = "entityID";
-            this.entityID.Size = new System.Drawing.Size(928, 257);
+            this.entityID.Size = new System.Drawing.Size(928, 244);
             this.entityID.TabIndex = 3;
             this.entityID.SelectedIndexChanged += new System.EventHandler(this.entityID_SelectedIndexChanged);
             // 
             // DescTextBox
             // 
             this.DescTextBox.Dock = System.Windows.Forms.DockStyle.Top;
-            this.DescTextBox.Font = new System.Drawing.Font("Roboto Light", 14.25F);
-            this.DescTextBox.Location = new System.Drawing.Point(261, 387);
+            this.DescTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.DescTextBox.Location = new System.Drawing.Point(261, 374);
             this.DescTextBox.Name = "DescTextBox";
             this.DescTextBox.Size = new System.Drawing.Size(928, 270);
             this.DescTextBox.TabIndex = 5;
