@@ -39,7 +39,8 @@ namespace Sisdat_Movie_List
             this.title = new System.Windows.Forms.Label();
             this.entityID = new System.Windows.Forms.ListBox();
             this.DescTextBox = new System.Windows.Forms.RichTextBox();
-            this.Roles = new System.Windows.Forms.Button();
+            this.searchText = new System.Windows.Forms.TextBox();
+            this.tableColumns = new System.Windows.Forms.ComboBox();
             this.sideMenu.SuspendLayout();
             this.topRight.SuspendLayout();
             this.SuspendLayout();
@@ -47,7 +48,6 @@ namespace Sisdat_Movie_List
             // sideMenu
             // 
             this.sideMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(44)))), ((int)(((byte)(59)))));
-            this.sideMenu.Controls.Add(this.Roles);
             this.sideMenu.Controls.Add(this.searchForGenre);
             this.sideMenu.Controls.Add(this.searchForDirector);
             this.sideMenu.Controls.Add(this.searchForActor);
@@ -159,41 +159,38 @@ namespace Sisdat_Movie_List
             // 
             // entityID
             // 
-            this.entityID.Dock = System.Windows.Forms.DockStyle.Top;
             this.entityID.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.entityID.FormattingEnabled = true;
             this.entityID.ItemHeight = 24;
-            this.entityID.Location = new System.Drawing.Point(261, 130);
+            this.entityID.Location = new System.Drawing.Point(330, 208);
             this.entityID.Name = "entityID";
-            this.entityID.Size = new System.Drawing.Size(928, 244);
+            this.entityID.Size = new System.Drawing.Size(809, 196);
             this.entityID.TabIndex = 3;
             this.entityID.SelectedIndexChanged += new System.EventHandler(this.entityID_SelectedIndexChanged);
             // 
             // DescTextBox
             // 
-            this.DescTextBox.Dock = System.Windows.Forms.DockStyle.Top;
             this.DescTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.DescTextBox.Location = new System.Drawing.Point(261, 374);
+            this.DescTextBox.Location = new System.Drawing.Point(330, 427);
             this.DescTextBox.Name = "DescTextBox";
-            this.DescTextBox.Size = new System.Drawing.Size(928, 270);
+            this.DescTextBox.Size = new System.Drawing.Size(778, 204);
             this.DescTextBox.TabIndex = 5;
             this.DescTextBox.Text = "";
             // 
-            // Roles
+            // searchText
             // 
-            this.Roles.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Roles.FlatAppearance.BorderSize = 0;
-            this.Roles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Roles.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
-            this.Roles.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(230)))));
-            this.Roles.Location = new System.Drawing.Point(0, 482);
-            this.Roles.Margin = new System.Windows.Forms.Padding(0);
-            this.Roles.Name = "Roles";
-            this.Roles.Size = new System.Drawing.Size(261, 88);
-            this.Roles.TabIndex = 6;
-            this.Roles.Text = "Roles";
-            this.Roles.UseVisualStyleBackColor = true;
-            this.Roles.Click += new System.EventHandler(this.Roles_Click);
+            this.searchText.Location = new System.Drawing.Point(734, 163);
+            this.searchText.Name = "searchText";
+            this.searchText.Size = new System.Drawing.Size(201, 20);
+            this.searchText.TabIndex = 6;
+            // 
+            // tableColumns
+            // 
+            this.tableColumns.FormattingEnabled = true;
+            this.tableColumns.Location = new System.Drawing.Point(358, 163);
+            this.tableColumns.Name = "tableColumns";
+            this.tableColumns.Size = new System.Drawing.Size(121, 21);
+            this.tableColumns.TabIndex = 7;
             // 
             // Dashboard
             // 
@@ -201,6 +198,8 @@ namespace Sisdat_Movie_List
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(230)))));
             this.ClientSize = new System.Drawing.Size(1189, 657);
+            this.Controls.Add(this.tableColumns);
+            this.Controls.Add(this.searchText);
             this.Controls.Add(this.DescTextBox);
             this.Controls.Add(this.entityID);
             this.Controls.Add(this.topRight);
@@ -213,6 +212,7 @@ namespace Sisdat_Movie_List
             this.topRight.ResumeLayout(false);
             this.topRight.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -228,7 +228,8 @@ namespace Sisdat_Movie_List
         private System.Windows.Forms.Button searchForDirector;
         private System.Windows.Forms.ListBox entityID;
         private System.Windows.Forms.RichTextBox DescTextBox;
-        private System.Windows.Forms.Button Roles;
+        private System.Windows.Forms.TextBox searchText;
+        private System.Windows.Forms.ComboBox tableColumns;
     }
 }
 
