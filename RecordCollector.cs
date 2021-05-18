@@ -94,5 +94,27 @@ namespace Sisdat_Movie_List
                 }
             }
         }
+
+        public class Roles                                  //isi dari attribut tabel Actors yang menampung query
+        {
+            public int actor_id { get; set; }
+            public string film_id { get; set; }
+            public string role_name { get; set; }
+
+            public string ActorInfo                       //format yang dipakai di UI (Dashboard.cs)
+            {
+                get
+                {
+                    return $" Actor ID : { actor_id  }";
+                }
+            }
+            public string Bio
+            {
+                get
+                {
+                    return $"Film ID : { film_id }, Role : {role_name}";
+                }
+            }
+        }
     }
 }

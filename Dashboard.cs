@@ -54,5 +54,15 @@ namespace Sisdat_Movie_List
             entityID.DisplayMember = "DirectorInfo";
 
         }
+
+        private void searchForGenre_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Roles_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

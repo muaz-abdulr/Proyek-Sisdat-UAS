@@ -39,6 +39,7 @@ namespace Sisdat_Movie_List
             this.title = new System.Windows.Forms.Label();
             this.entityID = new System.Windows.Forms.ListBox();
             this.DescTextBox = new System.Windows.Forms.RichTextBox();
+            this.Roles = new System.Windows.Forms.Button();
             this.sideMenu.SuspendLayout();
             this.topRight.SuspendLayout();
             this.SuspendLayout();
@@ -46,6 +47,7 @@ namespace Sisdat_Movie_List
             // sideMenu
             // 
             this.sideMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(44)))), ((int)(((byte)(59)))));
+            this.sideMenu.Controls.Add(this.Roles);
             this.sideMenu.Controls.Add(this.searchForGenre);
             this.sideMenu.Controls.Add(this.searchForDirector);
             this.sideMenu.Controls.Add(this.searchForActor);
@@ -71,6 +73,7 @@ namespace Sisdat_Movie_List
             this.searchForGenre.TabIndex = 5;
             this.searchForGenre.Text = "Genre";
             this.searchForGenre.UseVisualStyleBackColor = true;
+            this.searchForGenre.Click += new System.EventHandler(this.searchForGenre_Click);
             // 
             // searchForDirector
             // 
@@ -176,6 +179,22 @@ namespace Sisdat_Movie_List
             this.DescTextBox.TabIndex = 5;
             this.DescTextBox.Text = "";
             // 
+            // Roles
+            // 
+            this.Roles.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Roles.FlatAppearance.BorderSize = 0;
+            this.Roles.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Roles.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
+            this.Roles.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(230)))));
+            this.Roles.Location = new System.Drawing.Point(0, 482);
+            this.Roles.Margin = new System.Windows.Forms.Padding(0);
+            this.Roles.Name = "Roles";
+            this.Roles.Size = new System.Drawing.Size(261, 88);
+            this.Roles.TabIndex = 6;
+            this.Roles.Text = "Roles";
+            this.Roles.UseVisualStyleBackColor = true;
+            this.Roles.Click += new System.EventHandler(this.Roles_Click);
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -209,6 +228,7 @@ namespace Sisdat_Movie_List
         private System.Windows.Forms.Button searchForDirector;
         private System.Windows.Forms.ListBox entityID;
         private System.Windows.Forms.RichTextBox DescTextBox;
+        private System.Windows.Forms.Button Roles;
     }
 }
 
