@@ -12,7 +12,7 @@ namespace Sisdat_Movie_List
 {
     public partial class Dashboard : Form
     {
-        List<RecordCollector.movie2> movie = new List<RecordCollector.movie2>();
+        List<RecordCollector.Movie> movie = new List<RecordCollector.Movie>();
         List<RecordCollector.Actors> actor = new List<RecordCollector.Actors>();
         List<RecordCollector.sutradara> direct = new List<RecordCollector.sutradara>();
 

@@ -50,12 +50,12 @@ namespace Sisdat_Movie_List
                 }
             }
         }
-        public class movie2                                    //isi dari attribut tabel Actors yang menampung query
+        public class Movie
         {
             public int film_id { get; set; }
             public string film_title { get; set; }
             public string description { get; set; }
-            public string MovieDataID                            //format yang dipakai di UI (Dashboard.cs)
+            public string MovieDataID
             {
                 get
                 {
@@ -71,7 +71,7 @@ namespace Sisdat_Movie_List
             }
         }
         //disini tambah class baru jika ingin menambah output query dengan format yang berbeda
-        public class sutradara                                  //isi dari attribut tabel Actors yang menampung query
+        public class sutradara
         {
             public int director_id { get; set; }
             public string director_name { get; set; }
@@ -79,7 +79,7 @@ namespace Sisdat_Movie_List
             public int age { get; set; }
             public string bio { get; set; }
    
-            public string DirectorInfo                            //format yang dipakai di UI (Dashboard.cs)
+            public string DirectorInfo
             {
                 get
                 {
@@ -95,13 +95,13 @@ namespace Sisdat_Movie_List
             }
         }
 
-        public class Roles                                  //isi dari attribut tabel Actors yang menampung query
+        public class Roles
         {
             public int actor_id { get; set; }
             public string film_id { get; set; }
             public string role_name { get; set; }
 
-            public string ActorInfo                       //format yang dipakai di UI (Dashboard.cs)
+            public string RolesInfo
             {
                 get
                 {

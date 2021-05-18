@@ -25,9 +25,9 @@ namespace Sisdat_Movie_List
                 return output; //return output dari query
             }
         }
-        public List<RecordCollector.movie2> getMovieData()
+        public List<RecordCollector.Movie> getMovieData()
         {
-            List<RecordCollector.movie2> output = connection.Query<RecordCollector.movie2>($"select * from films").ToList();
+            List<RecordCollector.Movie> output = connection.Query<RecordCollector.Movie>($"select * from films").ToList();
             return output;
         }
         public List<RecordCollector.Actors> getActorsData()
@@ -40,12 +40,5 @@ namespace Sisdat_Movie_List
             List<RecordCollector.sutradara> output = connection.Query<RecordCollector.sutradara>($"select * from directors").ToList();
             return output;
         }
-
-        public List<RecordCollector.sutradara> getRolesData()
-        {
-            List<RecordCollector.sutradara> output = connection.Query<RecordCollector.sutradara>($"select * from directors").ToList();
-            return output;
-        }
- 
     }
 }
