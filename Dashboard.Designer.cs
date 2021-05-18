@@ -40,7 +40,6 @@ namespace Sisdat_Movie_List
             this.entityID = new System.Windows.Forms.ListBox();
             this.DescTextBox = new System.Windows.Forms.RichTextBox();
             this.searchText = new System.Windows.Forms.TextBox();
-            this.tableColumns = new System.Windows.Forms.ComboBox();
             this.sideMenu.SuspendLayout();
             this.topRight.SuspendLayout();
             this.SuspendLayout();
@@ -184,21 +183,12 @@ namespace Sisdat_Movie_List
             this.searchText.Size = new System.Drawing.Size(201, 20);
             this.searchText.TabIndex = 6;
             // 
-            // tableColumns
-            // 
-            this.tableColumns.FormattingEnabled = true;
-            this.tableColumns.Location = new System.Drawing.Point(358, 163);
-            this.tableColumns.Name = "tableColumns";
-            this.tableColumns.Size = new System.Drawing.Size(121, 21);
-            this.tableColumns.TabIndex = 7;
-            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(230)))));
             this.ClientSize = new System.Drawing.Size(1189, 657);
-            this.Controls.Add(this.tableColumns);
             this.Controls.Add(this.searchText);
             this.Controls.Add(this.DescTextBox);
             this.Controls.Add(this.entityID);
@@ -229,7 +219,6 @@ namespace Sisdat_Movie_List
         private System.Windows.Forms.ListBox entityID;
         private System.Windows.Forms.RichTextBox DescTextBox;
         private System.Windows.Forms.TextBox searchText;
-        private System.Windows.Forms.ComboBox tableColumns;
     }
 }
 

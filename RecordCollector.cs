@@ -39,7 +39,7 @@ namespace Sisdat_Movie_List
             {
                 get
                 {
-                    return $" Actor ID : { actor_id }, Actor Name : { actor_name }, Gender : { gender }, Age: { age }";
+                    return $" Actor ID : { actor_id },\n Actor Name : { actor_name }, Gender : { gender }, Age: { age }";
                 }
             }
             public string Bio
@@ -95,24 +95,23 @@ namespace Sisdat_Movie_List
             }
         }
 
-        public class Roles
+        public class Genre
         {
-            public int actor_id { get; set; }
-            public string film_id { get; set; }
-            public string role_name { get; set; }
+            public int genre_id { get; set; }
+            public string genre_type { get; set; }
 
-            public string RolesInfo
+            public string GenresInfo
             {
                 get
                 {
-                    return $" Actor ID : { actor_id  }";
+                    return $" Genre ID : { genre_id  }, Genre Name  : {genre_type}";
                 }
             }
             public string Bio
             {
                 get
                 {
-                    return $"Film ID : { film_id }, Role : {role_name}";
+                    return $"";
                 }
             }
         }

@@ -15,6 +15,7 @@ namespace Sisdat_Movie_List
         List<RecordCollector.Movie> movie = new List<RecordCollector.Movie>();
         List<RecordCollector.Actors> actor = new List<RecordCollector.Actors>();
         List<RecordCollector.sutradara> direct = new List<RecordCollector.sutradara>();
+        List<RecordCollector.Genre> genre = new List<RecordCollector.Genre>();
         List<RecordCollector.columnsName> columns = new List<RecordCollector.columnsName>();
 
         public Dashboard()
@@ -32,11 +33,10 @@ namespace Sisdat_Movie_List
         private void searchForMovie_Click(object sender, EventArgs e)
         {
             DataAccess movieData = new DataAccess();
-            columns = movieData.GetColumns("actors");
+            columns = movieData.GetColumns("films");
             movie = movieData.getMovieData();
             entityID.DataSource = movie;
             entityID.DisplayMember = "MovieDataID";
-            tableColumns.Items.Add(columns);
         }
 
         private void searchForActor_Click(object sender, EventArgs e)
@@ -58,12 +58,10 @@ namespace Sisdat_Movie_List
 
         private void searchForGenre_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void Roles_Click(object sender, EventArgs e)
-        {
-
+            DataAccess genreData = new DataAccess();
+            genre = genreData.getGenreData();
+            entityID.DataSource = genre;
+            entityID.DisplayMember = "GenresInfo";
         }
     }
 }
