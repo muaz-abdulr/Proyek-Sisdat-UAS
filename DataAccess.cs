@@ -35,5 +35,10 @@ namespace Sisdat_Movie_List
             List<RecordCollector.Actors> output = connection.Query<RecordCollector.Actors>($"select * from actors").ToList();
             return output;
         }
+        public List<RecordCollector.sutradara> getDirectorsData()
+        {
+            List<RecordCollector.sutradara> output = connection.Query<RecordCollector.sutradara>($"select * from directors").ToList();
+            return output;
+        }
     }
 }

@@ -42,7 +42,7 @@ namespace Sisdat_Movie_List
                     return $" Actor ID : { actor_id }, Actor Name : { actor_name }, Gender : { gender }, Age: { age }";
                 }
             }
-            public string ActorBIO
+            public string Bio
             { 
                 get
                 {
@@ -62,7 +62,7 @@ namespace Sisdat_Movie_List
                     return $"ID : {film_id}, title  : {film_title}";
                 }
             }
-            public string MovieDesc
+            public string Bio
             {
                 get
                 {
@@ -71,5 +71,28 @@ namespace Sisdat_Movie_List
             }
         }
         //disini tambah class baru jika ingin menambah output query dengan format yang berbeda
+        public class sutradara                                  //isi dari attribut tabel Actors yang menampung query
+        {
+            public int director_id { get; set; }
+            public string director_name { get; set; }
+            public string gender { get; set; }
+            public int age { get; set; }
+            public string bio { get; set; }
+   
+            public string DirectorInfo                            //format yang dipakai di UI (Dashboard.cs)
+            {
+                get
+                {
+                    return $" Director ID : { director_id },  Director Name : { director_name }, Gender : { gender },  Age: { age }";
+                }
+            }
+            public string Bio
+            {
+                get
+                {
+                    return $"{bio}";
+                }
+            }
+        }
     }
 }

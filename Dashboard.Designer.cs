@@ -86,6 +86,7 @@ namespace Sisdat_Movie_List
             this.searchForDirector.TabIndex = 4;
             this.searchForDirector.Text = "Director";
             this.searchForDirector.UseVisualStyleBackColor = true;
+            this.searchForDirector.Click += new System.EventHandler(this.searchForDirector_Click);
             // 
             // searchForActor
             // 
