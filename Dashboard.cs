@@ -18,6 +18,11 @@ namespace Sisdat_Movie_List
         List<RecordCollector.Genre> genre = new List<RecordCollector.Genre>();
         List<RecordCollector.columnsName> columns = new List<RecordCollector.columnsName>();
 
+        bool filmcheck = false;
+        bool actorcheck = false;
+        bool genrecheck = false;
+        bool directorcheck = false;
+
         public Dashboard()
         {
             InitializeComponent();
@@ -37,6 +42,10 @@ namespace Sisdat_Movie_List
             movie = movieData.getMovieData();
             entityID.DataSource = movie;
             entityID.DisplayMember = "MovieDataID";
+            filmcheck = true;
+            actorcheck = false;
+            genrecheck = false;
+            directorcheck = false;
         }
 
         private void searchForActor_Click(object sender, EventArgs e)
@@ -45,7 +54,11 @@ namespace Sisdat_Movie_List
             actor = actorData.getActorsData();
             entityID.DataSource = actor;
             entityID.DisplayMember = "ActorInfo";
-           
+            filmcheck = false;
+            actorcheck = true;
+            genrecheck = false;
+            directorcheck = false;
+
         }
         private void searchForDirector_Click(object sender, EventArgs e)
         {
@@ -53,6 +66,10 @@ namespace Sisdat_Movie_List
             direct = directorData.getDirectorsData();
             entityID.DataSource = direct;
             entityID.DisplayMember = "DirectorInfo";
+            filmcheck = false;
+            actorcheck = false;
+            genrecheck = false;
+            directorcheck = true;
 
         }
 
@@ -62,6 +79,48 @@ namespace Sisdat_Movie_List
             genre = genreData.getGenreData();
             entityID.DataSource = genre;
             entityID.DisplayMember = "GenresInfo";
+            filmcheck = false;
+            actorcheck = false;
+            genrecheck = true;
+            directorcheck = false;
+        }
+
+        private void searchText_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void search_Click(object sender, EventArgs e)
+        {
+            if (filmcheck)
+            {
+                DataAccess search = new DataAccess();
+                movie = search.searchMovieData(searchText.Text);
+                entityID.DataSource = movie;
+                entityID.DisplayMember = "MovieDataID";
+            }
+            else if (actorcheck)
+            {
+                DataAccess search = new DataAccess();
+                actor = search.searchActorsData(searchText.Text);
+                entityID.DataSource = actor;
+                entityID.DisplayMember = "ActorInfo";
+            }
+            else if (directorcheck)
+            {
+                DataAccess search = new DataAccess();
+                direct = search.searchDirectorsData(searchText.Text);
+                entityID.DataSource = direct;
+                entityID.DisplayMember = "DirectorInfo";
+            }
+            else if (genrecheck)
+            {
+                DataAccess search = new DataAccess();
+                movie = search.searchGenreData(searchText.Text);
+                entityID.DataSource = movie;
+                entityID.DisplayMember = "MovieDataID";
+            }
+         
         }
     }
 }

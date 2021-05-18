@@ -40,6 +40,7 @@ namespace Sisdat_Movie_List
             this.entityID = new System.Windows.Forms.ListBox();
             this.DescTextBox = new System.Windows.Forms.RichTextBox();
             this.searchText = new System.Windows.Forms.TextBox();
+            this.search = new System.Windows.Forms.Button();
             this.sideMenu.SuspendLayout();
             this.topRight.SuspendLayout();
             this.SuspendLayout();
@@ -172,16 +173,27 @@ namespace Sisdat_Movie_List
             this.DescTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
             this.DescTextBox.Location = new System.Drawing.Point(330, 427);
             this.DescTextBox.Name = "DescTextBox";
-            this.DescTextBox.Size = new System.Drawing.Size(778, 204);
+            this.DescTextBox.Size = new System.Drawing.Size(809, 204);
             this.DescTextBox.TabIndex = 5;
             this.DescTextBox.Text = "";
             // 
             // searchText
             // 
-            this.searchText.Location = new System.Drawing.Point(734, 163);
+            this.searchText.Location = new System.Drawing.Point(330, 171);
             this.searchText.Name = "searchText";
-            this.searchText.Size = new System.Drawing.Size(201, 20);
+            this.searchText.Size = new System.Drawing.Size(407, 20);
             this.searchText.TabIndex = 6;
+            this.searchText.TextChanged += new System.EventHandler(this.searchText_TextChanged);
+            // 
+            // search
+            // 
+            this.search.Location = new System.Drawing.Point(757, 169);
+            this.search.Name = "search";
+            this.search.Size = new System.Drawing.Size(75, 23);
+            this.search.TabIndex = 7;
+            this.search.Text = "search";
+            this.search.UseVisualStyleBackColor = true;
+            this.search.Click += new System.EventHandler(this.search_Click);
             // 
             // Dashboard
             // 
@@ -189,6 +201,7 @@ namespace Sisdat_Movie_List
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(230)))));
             this.ClientSize = new System.Drawing.Size(1189, 657);
+            this.Controls.Add(this.search);
             this.Controls.Add(this.searchText);
             this.Controls.Add(this.DescTextBox);
             this.Controls.Add(this.entityID);
@@ -219,6 +232,7 @@ namespace Sisdat_Movie_List
         private System.Windows.Forms.ListBox entityID;
         private System.Windows.Forms.RichTextBox DescTextBox;
         private System.Windows.Forms.TextBox searchText;
+        private System.Windows.Forms.Button search;
     }
 }
 
