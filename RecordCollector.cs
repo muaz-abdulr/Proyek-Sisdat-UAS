@@ -42,7 +42,7 @@ namespace Sisdat_Movie_List
                     return $" Actor ID : { actor_id }, Actor Name : { actor_name }, Gender : { gender }, Age: { age }";
                 }
             }
-            public string ActorBIO
+            public string Bio
             { 
                 get
                 {
@@ -62,7 +62,7 @@ namespace Sisdat_Movie_List
                     return $"ID : {film_id}, title  : {film_title}";
                 }
             }
-            public string MovieDesc
+            public string Bio
             {
                 get
                 {

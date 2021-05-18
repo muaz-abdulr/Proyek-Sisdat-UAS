@@ -14,10 +14,6 @@ namespace Sisdat_Movie_List
     {
         List<RecordCollector.movie2> movie = new List<RecordCollector.movie2>();
         List<RecordCollector.Actors> actor = new List<RecordCollector.Actors>();
-
-        bool moviecheck = false;
-        bool actorcheck = false;
-
         public Dashboard()
         {
             InitializeComponent();
@@ -26,23 +22,8 @@ namespace Sisdat_Movie_List
 
         private void entityID_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (moviecheck == true)
-            {
-                
-                DataAccess mov = new DataAccess();
-                List<RecordCollector.movie2> movData = mov.getMovieData();
-                DescTextBox.Text = movData[entityID.SelectedIndex].MovieDesc;
-
-            }
-            else if (actorcheck == true)
-            {
-                
-                DataAccess actorData = new DataAccess();
-                List<RecordCollector.Actors> actor = actorData.getActorsData();
-                DescTextBox.Text = actor[entityID.SelectedIndex].ActorBIO;
-               
-            }
-            
+            dynamic x = entityID.Items[entityID.SelectedIndex];
+            DescTextBox.Text = x.Bio;
         }
 
         private void searchForMovie_Click(object sender, EventArgs e)
@@ -51,8 +32,6 @@ namespace Sisdat_Movie_List
             movie = movieData.getMovieData();
             entityID.DataSource = movie;
             entityID.DisplayMember = "MovieDataID";
-            moviecheck = true;
-            actorcheck = false;
 
         }
 
@@ -62,9 +41,6 @@ namespace Sisdat_Movie_List
             actor = actorData.getActorsData();
             entityID.DataSource = actor;
             entityID.DisplayMember = "ActorInfo";
-            actorcheck = true;
-            moviecheck = false;
-
         }
     }
 }
