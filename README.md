@@ -28,5 +28,4 @@ Bahasa   :
 Software :
 1. Github                  : untuk version controlling
 2. Discord                 : untuk berkoordinasi
-3. Figma(?)                : untuk mendesign UI
-4. Visual Studio           : untuk menuliskan kode program
+3. Visual Studio           : untuk menuliskan kode program dan design ui
