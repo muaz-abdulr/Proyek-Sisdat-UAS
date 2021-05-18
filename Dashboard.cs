@@ -14,7 +14,9 @@ namespace Sisdat_Movie_List
     {
         List<RecordCollector.movie2> movie = new List<RecordCollector.movie2>();
         List<RecordCollector.Actors> actor = new List<RecordCollector.Actors>();
-        List<RecordCollector.sutradara> sutradara = new List<RecordCollector.sutradara>();
+
+        bool moviecheck = false;
+        bool actorcheck = false;
 
         public Dashboard()
         {
@@ -24,11 +26,23 @@ namespace Sisdat_Movie_List
 
         private void entityID_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dynamic x = entityID.Items[entityID.SelectedIndex];
-            DescTextBox.Text = x.Bio;
+            if (moviecheck == true)
+            {
+                
+                DataAccess mov = new DataAccess();
+                List<RecordCollector.movie2> movData = mov.getMovieData();
+                DescTextBox.Text = movData[entityID.SelectedIndex].MovieDesc;
 
-
-
+            }
+            else if (actorcheck == true)
+            {
+                
+                DataAccess actorData = new DataAccess();
+                List<RecordCollector.Actors> actor = actorData.getActorsData();
+                DescTextBox.Text = actor[entityID.SelectedIndex].ActorBIO;
+               
+            }
+            
         }
 
         private void searchForMovie_Click(object sender, EventArgs e)
@@ -37,7 +51,9 @@ namespace Sisdat_Movie_List
             movie = movieData.getMovieData();
             entityID.DataSource = movie;
             entityID.DisplayMember = "MovieDataID";
-            
+            moviecheck = true;
+            actorcheck = false;
+
         }
 
         private void searchForActor_Click(object sender, EventArgs e)
@@ -46,16 +62,8 @@ namespace Sisdat_Movie_List
             actor = actorData.getActorsData();
             entityID.DataSource = actor;
             entityID.DisplayMember = "ActorInfo";
-           
-
-        }
-
-        private void searchForDirector_Click(object sender, EventArgs e)
-        {
-            DataAccess directorData = new DataAccess();
-            sutradara = directorData.getDirectorsData();
-            entityID.DataSource = sutradara;
-            entityID.DisplayMember = "DirectorInfo";
+            actorcheck = true;
+            moviecheck = false;
 
         }
     }
