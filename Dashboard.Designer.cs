@@ -328,25 +328,6 @@ namespace Sisdat_Movie_List
             this.highLight.TabIndex = 6;
             this.highLight.Visible = false;
             // 
-            // searchlabel
-            // 
-            this.searchlabel.AutoSize = true;
-            this.searchlabel.Location = new System.Drawing.Point(330, 152);
-            this.searchlabel.Name = "searchlabel";
-            this.searchlabel.Size = new System.Drawing.Size(59, 13);
-            this.searchlabel.TabIndex = 8;
-            this.searchlabel.Text = "Search For";
-            // 
-            // lblvalue
-            // 
-            this.lblvalue.AutoSize = true;
-            this.lblvalue.Location = new System.Drawing.Point(385, 152);
-            this.lblvalue.Name = "lblvalue";
-            this.lblvalue.Size = new System.Drawing.Size(19, 13);
-            this.lblvalue.TabIndex = 9;
-            this.lblvalue.Text = "... ";
-            this.lblvalue.Click += new System.EventHandler(this.lblvalue_Click);
-            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
