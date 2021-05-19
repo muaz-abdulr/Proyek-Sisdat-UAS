@@ -46,6 +46,7 @@ namespace Sisdat_Movie_List
             actorcheck = false;
             genrecheck = false;
             directorcheck = false;
+            lblvalue.Text = searchForMovie.Text;
         }
 
         private void searchForActor_Click(object sender, EventArgs e)
@@ -58,6 +59,7 @@ namespace Sisdat_Movie_List
             actorcheck = true;
             genrecheck = false;
             directorcheck = false;
+            lblvalue.Text = searchForActor.Text;
 
         }
         private void searchForDirector_Click(object sender, EventArgs e)
@@ -70,6 +72,8 @@ namespace Sisdat_Movie_List
             actorcheck = false;
             genrecheck = false;
             directorcheck = true;
+            lblvalue.Text = searchForDirector.Text;
+
 
         }
 
@@ -83,6 +87,7 @@ namespace Sisdat_Movie_List
             actorcheck = false;
             genrecheck = true;
             directorcheck = false;
+            lblvalue.Text = searchForGenre.Text;
         }
 
         private void searchText_TextChanged(object sender, EventArgs e)
@@ -121,6 +126,11 @@ namespace Sisdat_Movie_List
                 entityID.DisplayMember = "MovieDataID";
             }
          
+        }
+
+        private void lblvalue_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

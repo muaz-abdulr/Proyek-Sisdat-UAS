@@ -41,6 +41,8 @@ namespace Sisdat_Movie_List
             this.DescTextBox = new System.Windows.Forms.RichTextBox();
             this.searchText = new System.Windows.Forms.TextBox();
             this.search = new System.Windows.Forms.Button();
+            this.searchlabel = new System.Windows.Forms.Label();
+            this.lblvalue = new System.Windows.Forms.Label();
             this.sideMenu.SuspendLayout();
             this.topRight.SuspendLayout();
             this.SuspendLayout();
@@ -195,12 +197,33 @@ namespace Sisdat_Movie_List
             this.search.UseVisualStyleBackColor = true;
             this.search.Click += new System.EventHandler(this.search_Click);
             // 
+            // searchlabel
+            // 
+            this.searchlabel.AutoSize = true;
+            this.searchlabel.Location = new System.Drawing.Point(330, 152);
+            this.searchlabel.Name = "searchlabel";
+            this.searchlabel.Size = new System.Drawing.Size(59, 13);
+            this.searchlabel.TabIndex = 8;
+            this.searchlabel.Text = "Search For";
+            // 
+            // lblvalue
+            // 
+            this.lblvalue.AutoSize = true;
+            this.lblvalue.Location = new System.Drawing.Point(385, 152);
+            this.lblvalue.Name = "lblvalue";
+            this.lblvalue.Size = new System.Drawing.Size(19, 13);
+            this.lblvalue.TabIndex = 9;
+            this.lblvalue.Text = "... ";
+            this.lblvalue.Click += new System.EventHandler(this.lblvalue_Click);
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(230)))));
             this.ClientSize = new System.Drawing.Size(1189, 657);
+            this.Controls.Add(this.lblvalue);
+            this.Controls.Add(this.searchlabel);
             this.Controls.Add(this.search);
             this.Controls.Add(this.searchText);
             this.Controls.Add(this.DescTextBox);
@@ -233,6 +256,8 @@ namespace Sisdat_Movie_List
         private System.Windows.Forms.RichTextBox DescTextBox;
         private System.Windows.Forms.TextBox searchText;
         private System.Windows.Forms.Button search;
+        private System.Windows.Forms.Label searchlabel;
+        private System.Windows.Forms.Label lblvalue;
     }
 }
 
