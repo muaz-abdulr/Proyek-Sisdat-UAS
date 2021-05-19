@@ -8,11 +8,6 @@ namespace Sisdat_Movie_List
 {
     public class RecordCollector //menampung hasil query
     {
-        public class columnsName
-        {
-            public string column_name { get; set; }
-        }
-
         public List<string> Record(List<dynamic> recordList)    //format record secara general, output => "{column1Val1} {column2Val1}..."
         {
             List<string> strList = new List<string>();
@@ -39,14 +34,14 @@ namespace Sisdat_Movie_List
             {
                 get
                 {
-                    return $" Actor ID : { actor_id },\n Actor Name : { actor_name }, Gender : { gender }, Age: { age }";
+                    return $"{ actor_name }";
                 }
             }
             public string Bio
             { 
                 get
                 {
-                    return $" { bio }";
+                    return $"Age\t\t: {age}\nGender\t: {gender}\nDescription\n{ bio }";
                 }
             }
         }
@@ -59,14 +54,14 @@ namespace Sisdat_Movie_List
             {
                 get
                 {
-                    return $"ID : {film_id}, title  : {film_title}";
+                    return $"{film_title}";
                 }
             }
             public string Bio
             {
                 get
                 {
-                    return $"{description}";
+                    return $"Description\n{description}";
                 }
             }
         }
@@ -83,14 +78,14 @@ namespace Sisdat_Movie_List
             {
                 get
                 {
-                    return $" Director ID : { director_id },  Director Name : { director_name }, Gender : { gender },  Age: { age }";
+                    return $"{ director_name }";
                 }
             }
             public string Bio
             {
                 get
                 {
-                    return $"{bio}";
+                    return $"Age\t\t: {age}\nGender\t: {gender}\nDescription\n{ bio }";
                 }
             }
         }
@@ -104,7 +99,7 @@ namespace Sisdat_Movie_List
             {
                 get
                 {
-                    return $" Genre ID : { genre_id  }, Genre Name  : {genre_type}";
+                    return $"{genre_type}";
                 }
             }
             public string Bio

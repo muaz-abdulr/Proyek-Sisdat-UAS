@@ -11,13 +11,6 @@ namespace Sisdat_Movie_List
     public class DataAccess
     {
         IDbConnection connection = new System.Data.SqlClient.SqlConnection(ConnectorToDataSource.CnnVal("Sisdat_Movie_List.Properties.Settings.MovieListConnectionString"));
-        public List<RecordCollector.columnsName> GetColumns(string table_name)
-        {
-            {
-                var output = connection.Query<RecordCollector.columnsName>($"select column_name from information_schema.columns where table_name = '{table_name}'").ToList();
-                return output;
-            }
-        }
         public List<dynamic> GetRecord(string table_name) //fungsi yang memanggil query dan menyimpan output dalam list yang didefinisi di RecordCollector.cs
         {
             {
@@ -27,22 +20,22 @@ namespace Sisdat_Movie_List
         }
         public List<RecordCollector.Movie> getMovieData()
         {
-            List<RecordCollector.Movie> output = connection.Query<RecordCollector.Movie>($"select * from films").ToList();
+            List<RecordCollector.Movie> output = connection.Query<RecordCollector.Movie>($"exec getMovieData").ToList();
             return output;
         }
         public List<RecordCollector.Actors> getActorsData()
         {
-            List<RecordCollector.Actors> output = connection.Query<RecordCollector.Actors>($"select * from actors").ToList();
+            List<RecordCollector.Actors> output = connection.Query<RecordCollector.Actors>($"exec getActorsData").ToList();
             return output;
         }
         public List<RecordCollector.sutradara> getDirectorsData()
         {
-            List<RecordCollector.sutradara> output = connection.Query<RecordCollector.sutradara>($"select * from directors").ToList();
+            List<RecordCollector.sutradara> output = connection.Query<RecordCollector.sutradara>($"exec getDirectorsData").ToList();
             return output;
         }
         public List<RecordCollector.Genre> getGenreData()
         {
-            List<RecordCollector.Genre> output = connection.Query<RecordCollector.Genre>($"select * from genres").ToList();
+            List<RecordCollector.Genre> output = connection.Query<RecordCollector.Genre>($"exec getGenreData").ToList();
             return output;
         }
 

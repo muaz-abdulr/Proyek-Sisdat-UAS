@@ -16,17 +16,16 @@ namespace Sisdat_Movie_List
         List<RecordCollector.Actors> actor = new List<RecordCollector.Actors>();
         List<RecordCollector.sutradara> direct = new List<RecordCollector.sutradara>();
         List<RecordCollector.Genre> genre = new List<RecordCollector.Genre>();
-        List<RecordCollector.columnsName> columns = new List<RecordCollector.columnsName>();
 
         bool filmcheck = false;
         bool actorcheck = false;
         bool genrecheck = false;
         bool directorcheck = false;
-
+        int mouseX, mouseY;
+        bool mousePressed;
         public Dashboard()
         {
             InitializeComponent();
-
         }
 
         private void entityID_SelectedIndexChanged(object sender, EventArgs e)
@@ -38,7 +37,6 @@ namespace Sisdat_Movie_List
         private void searchForMovie_Click(object sender, EventArgs e)
         {
             DataAccess movieData = new DataAccess();
-            columns = movieData.GetColumns("films");
             movie = movieData.getMovieData();
             entityID.DataSource = movie;
             entityID.DisplayMember = "MovieDataID";
@@ -46,6 +44,12 @@ namespace Sisdat_Movie_List
             actorcheck = false;
             genrecheck = false;
             directorcheck = false;
+            searchForMovie.BackColor = Color.FromArgb(35, 65, 87);
+            topLeft.BackColor = Color.FromArgb(78, 205, 196);
+            topRight.BackColor = Color.FromArgb(78, 205, 196);
+            highLight.Location = searchForMovie.Location;
+            highLight.Visible = true;
+            highLight.BackColor = Color.FromArgb(78, 205, 196);
         }
 
         private void searchForActor_Click(object sender, EventArgs e)
@@ -58,7 +62,12 @@ namespace Sisdat_Movie_List
             actorcheck = true;
             genrecheck = false;
             directorcheck = false;
-
+            searchForActor.BackColor = Color.FromArgb(35, 65, 87);
+            topLeft.BackColor = Color.FromArgb(255, 107, 107);
+            topRight.BackColor = Color.FromArgb(255, 107, 107);
+            highLight.Location = searchForActor.Location;
+            highLight.Visible = true;
+            highLight.BackColor = Color.FromArgb(255, 107, 107);
         }
         private void searchForDirector_Click(object sender, EventArgs e)
         {
@@ -70,7 +79,12 @@ namespace Sisdat_Movie_List
             actorcheck = false;
             genrecheck = false;
             directorcheck = true;
-
+            searchForDirector.BackColor = Color.FromArgb(35, 65, 87);
+            topLeft.BackColor = Color.FromArgb(255, 209, 102);
+            topRight.BackColor = Color.FromArgb(255, 209, 102);
+            highLight.Location = searchForDirector.Location;
+            highLight.Visible = true;
+            highLight.BackColor = Color.FromArgb(255, 209, 102);
         }
 
         private void searchForGenre_Click(object sender, EventArgs e)
@@ -83,11 +97,12 @@ namespace Sisdat_Movie_List
             actorcheck = false;
             genrecheck = true;
             directorcheck = false;
-        }
-
-        private void searchText_TextChanged(object sender, EventArgs e)
-        {
-
+            searchForGenre.BackColor = Color.FromArgb(35, 65, 87);
+            topLeft.BackColor = Color.FromArgb(26, 83, 92);
+            topRight.BackColor = Color.FromArgb(26, 83, 92);
+            highLight.Location = searchForGenre.Location;
+            highLight.Visible = true;
+            highLight.BackColor = Color.FromArgb(26, 83, 92);
         }
 
         private void search_Click(object sender, EventArgs e)
@@ -121,6 +136,67 @@ namespace Sisdat_Movie_List
                 entityID.DisplayMember = "MovieDataID";
             }
          
+        }
+        private void panel3_MouseDown(object sender, MouseEventArgs e)
+        {
+            mousePressed = true;
+            mouseX = e.X;
+            mouseY = e.Y;
+        }
+
+        private void panel3_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (mousePressed)
+            {
+                this.SetDesktopLocation(MousePosition.X - mouseX, MousePosition.Y - mouseY);
+            }
+        }
+
+        private void closeBttn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void maximizeBttn_Click(object sender, EventArgs e)
+        {
+            if(this.ClientSize == this.MinimumSize)
+            {
+                this.WindowState = FormWindowState.Maximized;
+            }
+            else
+            {
+                this.WindowState = FormWindowState.Normal;
+            }
+        }
+
+        private void minimizeBttn_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void searchForMovie_Leave(object sender, EventArgs e)
+        {
+            searchForMovie.BackColor = Color.FromArgb(22, 44, 59);
+        }
+
+        private void searchForActor_Leave(object sender, EventArgs e)
+        {
+            searchForActor.BackColor = Color.FromArgb(22, 44, 59);
+        }
+
+        private void searchForDirector_Leave(object sender, EventArgs e)
+        {
+            searchForDirector.BackColor = Color.FromArgb(22, 44, 59);
+        }
+
+        private void searchForGenre_Leave(object sender, EventArgs e)
+        {
+            searchForGenre.BackColor = Color.FromArgb(22, 44, 59);
+        }
+
+        private void panel3_MouseUp(object sender, MouseEventArgs e)
+        {
+            mousePressed = false;
         }
     }
 }

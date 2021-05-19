@@ -144,6 +144,11 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>MovieList.mdf</DependentUpon>
     </Content>
+    <None Include="Resources\resizeRect.png" />
+    <None Include="Resources\minimizeRect.png" />
+    <None Include="Resources\minimize.png" />
+    <None Include="Resources\resize.png" />
+    <None Include="Resources\X.png" />
     <None Include="Resources\clapperboardIcon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
