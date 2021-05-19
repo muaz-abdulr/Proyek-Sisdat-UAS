@@ -30,6 +30,7 @@ namespace Sisdat_Movie_List
         private void InitializeComponent()
         {
             this.sideMenu = new System.Windows.Forms.Panel();
+            this.highLight = new System.Windows.Forms.Panel();
             this.searchForGenre = new System.Windows.Forms.Button();
             this.searchForDirector = new System.Windows.Forms.Button();
             this.searchForActor = new System.Windows.Forms.Button();
@@ -48,7 +49,8 @@ namespace Sisdat_Movie_List
             this.maximizeBttn = new System.Windows.Forms.Button();
             this.closeBttn = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.highLight = new System.Windows.Forms.Panel();
+            this.labelsearch = new System.Windows.Forms.Label();
+            this.lblvalue = new System.Windows.Forms.Label();
             this.sideMenu.SuspendLayout();
             this.topRight.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -69,6 +71,15 @@ namespace Sisdat_Movie_List
             this.sideMenu.Name = "sideMenu";
             this.sideMenu.Size = new System.Drawing.Size(261, 675);
             this.sideMenu.TabIndex = 0;
+            // 
+            // highLight
+            // 
+            this.highLight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(83)))), ((int)(((byte)(110)))));
+            this.highLight.Location = new System.Drawing.Point(0, 218);
+            this.highLight.Name = "highLight";
+            this.highLight.Size = new System.Drawing.Size(10, 88);
+            this.highLight.TabIndex = 6;
+            this.highLight.Visible = false;
             // 
             // searchForGenre
             // 
@@ -179,9 +190,9 @@ namespace Sisdat_Movie_List
             this.searchText.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.searchText.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(83)))), ((int)(((byte)(110)))));
-            this.searchText.Location = new System.Drawing.Point(0, 1);
+            this.searchText.Location = new System.Drawing.Point(0, 3);
             this.searchText.Name = "searchText";
-            this.searchText.Size = new System.Drawing.Size(635, 24);
+            this.searchText.Size = new System.Drawing.Size(656, 24);
             this.searchText.TabIndex = 6;
             // 
             // search
@@ -192,7 +203,7 @@ namespace Sisdat_Movie_List
             this.search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.search.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.search.ForeColor = System.Drawing.Color.White;
-            this.search.Location = new System.Drawing.Point(721, 0);
+            this.search.Location = new System.Drawing.Point(742, 0);
             this.search.Name = "search";
             this.search.Size = new System.Drawing.Size(133, 29);
             this.search.TabIndex = 7;
@@ -206,9 +217,9 @@ namespace Sisdat_Movie_List
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.Controls.Add(this.searchText);
             this.panel2.Controls.Add(this.search);
-            this.panel2.Location = new System.Drawing.Point(313, 189);
+            this.panel2.Location = new System.Drawing.Point(303, 189);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(854, 29);
+            this.panel2.Size = new System.Drawing.Size(875, 29);
             this.panel2.TabIndex = 9;
             // 
             // entityID
@@ -247,9 +258,9 @@ namespace Sisdat_Movie_List
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(83)))), ((int)(((byte)(110)))));
-            this.panel1.Location = new System.Drawing.Point(313, 224);
+            this.panel1.Location = new System.Drawing.Point(303, 224);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(854, 5);
+            this.panel1.Size = new System.Drawing.Size(875, 5);
             this.panel1.TabIndex = 10;
             // 
             // panel3
@@ -319,14 +330,25 @@ namespace Sisdat_Movie_List
             this.panel4.Size = new System.Drawing.Size(875, 423);
             this.panel4.TabIndex = 12;
             // 
-            // highLight
+            // labelsearch
             // 
-            this.highLight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(83)))), ((int)(((byte)(110)))));
-            this.highLight.Location = new System.Drawing.Point(0, 218);
-            this.highLight.Name = "highLight";
-            this.highLight.Size = new System.Drawing.Size(10, 88);
-            this.highLight.TabIndex = 6;
-            this.highLight.Visible = false;
+            this.labelsearch.AutoSize = true;
+            this.labelsearch.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.labelsearch.Location = new System.Drawing.Point(299, 165);
+            this.labelsearch.Name = "labelsearch";
+            this.labelsearch.Size = new System.Drawing.Size(91, 21);
+            this.labelsearch.TabIndex = 7;
+            this.labelsearch.Text = "Search For";
+            // 
+            // lblvalue
+            // 
+            this.lblvalue.AutoSize = true;
+            this.lblvalue.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.lblvalue.Location = new System.Drawing.Point(386, 165);
+            this.lblvalue.Name = "lblvalue";
+            this.lblvalue.Size = new System.Drawing.Size(22, 21);
+            this.lblvalue.TabIndex = 13;
+            this.lblvalue.Text = "...";
             // 
             // Dashboard
             // 
@@ -334,6 +356,8 @@ namespace Sisdat_Movie_List
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(230)))));
             this.ClientSize = new System.Drawing.Size(1205, 696);
+            this.Controls.Add(this.lblvalue);
+            this.Controls.Add(this.labelsearch);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.entityID);
             this.Controls.Add(this.DescTextBox);
@@ -354,6 +378,7 @@ namespace Sisdat_Movie_List
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -379,6 +404,8 @@ namespace Sisdat_Movie_List
         private System.Windows.Forms.Button closeBttn;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel highLight;
+        private System.Windows.Forms.Label labelsearch;
+        private System.Windows.Forms.Label lblvalue;
     }
 }
 

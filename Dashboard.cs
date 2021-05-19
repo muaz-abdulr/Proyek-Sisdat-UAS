@@ -50,6 +50,8 @@ namespace Sisdat_Movie_List
             highLight.Location = searchForMovie.Location;
             highLight.Visible = true;
             highLight.BackColor = Color.FromArgb(78, 205, 196);
+            lblvalue.Text = searchForMovie.Text;
+
         }
 
         private void searchForActor_Click(object sender, EventArgs e)
@@ -68,6 +70,7 @@ namespace Sisdat_Movie_List
             highLight.Location = searchForActor.Location;
             highLight.Visible = true;
             highLight.BackColor = Color.FromArgb(255, 107, 107);
+            lblvalue.Text = searchForActor.Text;
         }
         private void searchForDirector_Click(object sender, EventArgs e)
         {
@@ -85,6 +88,7 @@ namespace Sisdat_Movie_List
             highLight.Location = searchForDirector.Location;
             highLight.Visible = true;
             highLight.BackColor = Color.FromArgb(255, 209, 102);
+            lblvalue.Text = searchForDirector.Text;
         }
 
         private void searchForGenre_Click(object sender, EventArgs e)
@@ -103,6 +107,7 @@ namespace Sisdat_Movie_List
             highLight.Location = searchForGenre.Location;
             highLight.Visible = true;
             highLight.BackColor = Color.FromArgb(26, 83, 92);
+            lblvalue.Text = searchForGenre.Text;
         }
 
         private void search_Click(object sender, EventArgs e)
