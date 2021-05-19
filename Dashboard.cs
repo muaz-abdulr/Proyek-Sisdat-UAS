@@ -198,5 +198,10 @@ namespace Sisdat_Movie_List
         {
             mousePressed = false;
         }
+
+        private void lblvalue_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
