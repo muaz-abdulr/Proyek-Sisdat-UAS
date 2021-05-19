@@ -95,6 +95,12 @@ namespace Sisdat_Movie_List
             public int genre_id { get; set; }
             public string genre_type { get; set; }
 
+            public int FilmID { get; set; }
+
+            public string FilmTitle { get; set; }
+
+            public string FilmDesc { get; set; }
+
             public string GenresInfo
             {
                 get
@@ -106,10 +112,13 @@ namespace Sisdat_Movie_List
             {
                 get
                 {
-                    return $"";
+                    return $"{FilmTitle}";
                 }
             }
+            
         }
 
     }
 }
+
+

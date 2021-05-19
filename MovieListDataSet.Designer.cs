@@ -3320,6 +3320,12 @@ namespace Sisdat_Movie_List {
             
             private global::System.Data.DataColumn columngenre_type;
             
+            private global::System.Data.DataColumn columnFilmID;
+            
+            private global::System.Data.DataColumn columnFilmTitle;
+            
+            private global::System.Data.DataColumn columnFilmDesc;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public getGenreDataDataTable() {
@@ -3371,6 +3377,30 @@ namespace Sisdat_Movie_List {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn FilmIDColumn {
+                get {
+                    return this.columnFilmID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn FilmTitleColumn {
+                get {
+                    return this.columnFilmTitle;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn FilmDescColumn {
+                get {
+                    return this.columnFilmDesc;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -3406,11 +3436,14 @@ namespace Sisdat_Movie_List {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public getGenreDataRow AddgetGenreDataRow(int genre_id, string genre_type) {
+            public getGenreDataRow AddgetGenreDataRow(int genre_id, string genre_type, int FilmID, string FilmTitle, string FilmDesc) {
                 getGenreDataRow rowgetGenreDataRow = ((getGenreDataRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         genre_id,
-                        genre_type};
+                        genre_type,
+                        FilmID,
+                        FilmTitle,
+                        FilmDesc};
                 rowgetGenreDataRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowgetGenreDataRow);
                 return rowgetGenreDataRow;
@@ -3418,9 +3451,10 @@ namespace Sisdat_Movie_List {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public getGenreDataRow FindBygenre_id(int genre_id) {
+            public getGenreDataRow FindBygenre_idFilmID(int genre_id, int FilmID) {
                 return ((getGenreDataRow)(this.Rows.Find(new object[] {
-                            genre_id})));
+                            genre_id,
+                            FilmID})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3442,6 +3476,9 @@ namespace Sisdat_Movie_List {
             internal void InitVars() {
                 this.columngenre_id = base.Columns["genre_id"];
                 this.columngenre_type = base.Columns["genre_type"];
+                this.columnFilmID = base.Columns["FilmID"];
+                this.columnFilmTitle = base.Columns["FilmTitle"];
+                this.columnFilmDesc = base.Columns["FilmDesc"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3451,11 +3488,20 @@ namespace Sisdat_Movie_List {
                 base.Columns.Add(this.columngenre_id);
                 this.columngenre_type = new global::System.Data.DataColumn("genre_type", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columngenre_type);
+                this.columnFilmID = new global::System.Data.DataColumn("FilmID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFilmID);
+                this.columnFilmTitle = new global::System.Data.DataColumn("FilmTitle", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFilmTitle);
+                this.columnFilmDesc = new global::System.Data.DataColumn("FilmDesc", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFilmDesc);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columngenre_id}, true));
+                                this.columngenre_id,
+                                this.columnFilmID}, true));
                 this.columngenre_id.AllowDBNull = false;
-                this.columngenre_id.Unique = true;
                 this.columngenre_type.MaxLength = 20;
+                this.columnFilmID.AllowDBNull = false;
+                this.columnFilmTitle.MaxLength = 40;
+                this.columnFilmDesc.MaxLength = 2147483647;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4974,6 +5020,49 @@ namespace Sisdat_Movie_List {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int FilmID {
+                get {
+                    return ((int)(this[this.tablegetGenreData.FilmIDColumn]));
+                }
+                set {
+                    this[this.tablegetGenreData.FilmIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string FilmTitle {
+                get {
+                    try {
+                        return ((string)(this[this.tablegetGenreData.FilmTitleColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'FilmTitle\' in table \'getGenreData\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablegetGenreData.FilmTitleColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string FilmDesc {
+                get {
+                    try {
+                        return ((string)(this[this.tablegetGenreData.FilmDescColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'FilmDesc\' in table \'getGenreData\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablegetGenreData.FilmDescColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Isgenre_typeNull() {
                 return this.IsNull(this.tablegetGenreData.genre_typeColumn);
             }
@@ -4982,6 +5071,30 @@ namespace Sisdat_Movie_List {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setgenre_typeNull() {
                 this[this.tablegetGenreData.genre_typeColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsFilmTitleNull() {
+                return this.IsNull(this.tablegetGenreData.FilmTitleColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetFilmTitleNull() {
+                this[this.tablegetGenreData.FilmTitleColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsFilmDescNull() {
+                return this.IsNull(this.tablegetGenreData.FilmDescColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetFilmDescNull() {
+                this[this.tablegetGenreData.FilmDescColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -8120,6 +8233,9 @@ SELECT genre_id, genre_type FROM genres WHERE (genre_id = @genre_id)";
             tableMapping.DataSetTable = "getGenreData";
             tableMapping.ColumnMappings.Add("genre_id", "genre_id");
             tableMapping.ColumnMappings.Add("genre_type", "genre_type");
+            tableMapping.ColumnMappings.Add("FilmID", "FilmID");
+            tableMapping.ColumnMappings.Add("FilmTitle", "FilmTitle");
+            tableMapping.ColumnMappings.Add("FilmDesc", "FilmDesc");
             this._adapter.TableMappings.Add(tableMapping);
         }
         

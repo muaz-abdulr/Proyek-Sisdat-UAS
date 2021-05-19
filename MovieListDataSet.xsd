@@ -384,6 +384,9 @@ SELECT genre_id, genre_type FROM genres WHERE (genre_id = @genre_id)</CommandTex
             <Mappings>
               <Mapping SourceColumn="genre_id" DataSetColumn="genre_id" />
               <Mapping SourceColumn="genre_type" DataSetColumn="genre_type" />
+              <Mapping SourceColumn="FilmID" DataSetColumn="FilmID" />
+              <Mapping SourceColumn="FilmTitle" DataSetColumn="FilmTitle" />
+              <Mapping SourceColumn="FilmDesc" DataSetColumn="FilmDesc" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -608,6 +611,21 @@ SELECT genre_id, genre_type FROM genres WHERE (genre_id = @genre_id)</CommandTex
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="FilmID" msprop:Generator_ColumnVarNameInTable="columnFilmID" msprop:Generator_ColumnPropNameInRow="FilmID" msprop:Generator_ColumnPropNameInTable="FilmIDColumn" msprop:Generator_UserColumnName="FilmID" type="xs:int" />
+              <xs:element name="FilmTitle" msprop:Generator_ColumnVarNameInTable="columnFilmTitle" msprop:Generator_ColumnPropNameInRow="FilmTitle" msprop:Generator_ColumnPropNameInTable="FilmTitleColumn" msprop:Generator_UserColumnName="FilmTitle" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FilmDesc" msprop:Generator_ColumnVarNameInTable="columnFilmDesc" msprop:Generator_ColumnPropNameInRow="FilmDesc" msprop:Generator_ColumnPropNameInTable="FilmDescColumn" msprop:Generator_UserColumnName="FilmDesc" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -661,6 +679,7 @@ SELECT genre_id, genre_type FROM genres WHERE (genre_id = @genre_id)</CommandTex
     <xs:unique name="getGenreData_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:getGenreData" />
       <xs:field xpath="mstns:genre_id" />
+      <xs:field xpath="mstns:FilmID" />
     </xs:unique>
     <xs:unique name="getMovieData_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:getMovieData" />
