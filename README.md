@@ -1,9 +1,9 @@
 # Program Movie Database
 
 Anggota Kelompok:
-* MUHAMMAD DAFFA ALIFIANDI(140810200016)
-* MU'AZ ABDUL ROHIM   (140810200026)
-* ANDRE NATHANIEL ADIPRAJA(140810200042)
+* MUHAMMAD DAFFA ALIFIANDI   (140810200016)
+* MU'AZ ABDUL ROHIM          (140810200026)
+* ANDRE NATHANIEL ADIPRAJA   (140810200042)
 ---
 ## Deskripsi Program
   Program ini menyediakan data dari berbagai film, meliputi judul film, aktor, genre, dan bahkan sutradara film. Program ini dibuat dengan bahasa C# dan dengan menggunakan segala materi yang didapatkan dari Praktikum Sistem Database I.
