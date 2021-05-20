@@ -142,19 +142,24 @@ namespace Sisdat_Movie_List
             }
          
         }
-        private void panel3_MouseDown(object sender, MouseEventArgs e)
+
+        private void borderPanel_MouseDown(object sender, MouseEventArgs e)
         {
             mousePressed = true;
             mouseX = e.X;
             mouseY = e.Y;
         }
 
-        private void panel3_MouseMove(object sender, MouseEventArgs e)
+        private void borderPanel_MouseMove(object sender, MouseEventArgs e)
         {
             if (mousePressed)
             {
                 this.SetDesktopLocation(MousePosition.X - mouseX, MousePosition.Y - mouseY);
             }
+        }
+        private void borderPanel_MouseUp(object sender, MouseEventArgs e)
+        {
+            mousePressed = false;
         }
 
         private void closeBttn_Click(object sender, EventArgs e)
@@ -199,14 +204,5 @@ namespace Sisdat_Movie_List
             searchForGenre.BackColor = Color.FromArgb(22, 44, 59);
         }
 
-        private void panel3_MouseUp(object sender, MouseEventArgs e)
-        {
-            mousePressed = false;
-        }
-
-        private void lblvalue_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

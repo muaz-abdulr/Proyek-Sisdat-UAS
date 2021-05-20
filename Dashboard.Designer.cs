@@ -44,7 +44,7 @@ namespace Sisdat_Movie_List
             this.entityID = new System.Windows.Forms.ListBox();
             this.DescTextBox = new System.Windows.Forms.RichTextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.borderPanel = new System.Windows.Forms.Panel();
             this.minimizeBttn = new System.Windows.Forms.Button();
             this.maximizeBttn = new System.Windows.Forms.Button();
             this.closeBttn = new System.Windows.Forms.Button();
@@ -54,7 +54,7 @@ namespace Sisdat_Movie_List
             this.sideMenu.SuspendLayout();
             this.topRight.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.borderPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // sideMenu
@@ -263,19 +263,19 @@ namespace Sisdat_Movie_List
             this.panel1.Size = new System.Drawing.Size(875, 5);
             this.panel1.TabIndex = 10;
             // 
-            // panel3
+            // borderPanel
             // 
-            this.panel3.Controls.Add(this.minimizeBttn);
-            this.panel3.Controls.Add(this.maximizeBttn);
-            this.panel3.Controls.Add(this.closeBttn);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1205, 21);
-            this.panel3.TabIndex = 11;
-            this.panel3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseDown);
-            this.panel3.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseMove);
-            this.panel3.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseUp);
+            this.borderPanel.Controls.Add(this.minimizeBttn);
+            this.borderPanel.Controls.Add(this.maximizeBttn);
+            this.borderPanel.Controls.Add(this.closeBttn);
+            this.borderPanel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.borderPanel.Location = new System.Drawing.Point(0, 0);
+            this.borderPanel.Name = "borderPanel";
+            this.borderPanel.Size = new System.Drawing.Size(1205, 21);
+            this.borderPanel.TabIndex = 11;
+            this.borderPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.borderPanel_MouseDown);
+            this.borderPanel.MouseMove += new System.Windows.Forms.MouseEventHandler(this.borderPanel_MouseMove);
+            this.borderPanel.MouseUp += new System.Windows.Forms.MouseEventHandler(this.borderPanel_MouseUp);
             // 
             // minimizeBttn
             // 
@@ -364,7 +364,7 @@ namespace Sisdat_Movie_List
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.topRight);
             this.Controls.Add(this.sideMenu);
-            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.borderPanel);
             this.Controls.Add(this.panel4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MinimumSize = new System.Drawing.Size(1205, 696);
@@ -376,7 +376,7 @@ namespace Sisdat_Movie_List
             this.topRight.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
+            this.borderPanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -398,7 +398,7 @@ namespace Sisdat_Movie_List
         private System.Windows.Forms.ListBox entityID;
         private System.Windows.Forms.RichTextBox DescTextBox;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel borderPanel;
         private System.Windows.Forms.Button minimizeBttn;
         private System.Windows.Forms.Button maximizeBttn;
         private System.Windows.Forms.Button closeBttn;
