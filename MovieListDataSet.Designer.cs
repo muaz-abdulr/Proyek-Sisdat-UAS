@@ -375,6 +375,7 @@ namespace Sisdat_Movie_List {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         internal void InitVars() {
             this.InitVars(true);
+
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
