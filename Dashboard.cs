@@ -145,13 +145,9 @@ namespace Sisdat_Movie_List
             }
             else if (genrecheck)
             {
-                List<RecordCollector.Movie> searched = movie.FindAll(
-                    delegate (RecordCollector.Movie x)
-                    {
-                        return x.film_title.IndexOf(searchText.Text, StringComparison.OrdinalIgnoreCase) >= 0;
-                    }
-                    );
-                entityID.DataSource = searched;
+                DataAccess search = new DataAccess();
+                movie = search.searchGenreData(searchText.Text);
+                entityID.DataSource = movie;
                 entityID.DisplayMember = "MovieDataID";
             }
          
