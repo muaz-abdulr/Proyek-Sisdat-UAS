@@ -204,6 +204,11 @@ namespace Sisdat_Movie_List
             mousePressed = false;
         }
 
+        private void DescTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void lblvalue_Click(object sender, EventArgs e)
         {
 

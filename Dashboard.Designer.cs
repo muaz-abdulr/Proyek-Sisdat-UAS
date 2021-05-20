@@ -252,6 +252,7 @@ namespace Sisdat_Movie_List
             this.DescTextBox.Size = new System.Drawing.Size(854, 246);
             this.DescTextBox.TabIndex = 5;
             this.DescTextBox.Text = "";
+            this.DescTextBox.TextChanged += new System.EventHandler(this.DescTextBox_TextChanged);
             // 
             // panel1
             // 
