@@ -30,6 +30,7 @@ namespace Sisdat_Movie_List
         private void InitializeComponent()
         {
             this.sideMenu = new System.Windows.Forms.Panel();
+            this.watchlistbutton = new System.Windows.Forms.Button();
             this.highLight = new System.Windows.Forms.Panel();
             this.searchForGenre = new System.Windows.Forms.Button();
             this.searchForDirector = new System.Windows.Forms.Button();
@@ -51,7 +52,6 @@ namespace Sisdat_Movie_List
             this.panel4 = new System.Windows.Forms.Panel();
             this.labelsearch = new System.Windows.Forms.Label();
             this.lblvalue = new System.Windows.Forms.Label();
-            this.watchlistbutton = new System.Windows.Forms.Button();
             this.sideMenu.SuspendLayout();
             this.topRight.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -73,6 +73,22 @@ namespace Sisdat_Movie_List
             this.sideMenu.Name = "sideMenu";
             this.sideMenu.Size = new System.Drawing.Size(261, 675);
             this.sideMenu.TabIndex = 0;
+            // 
+            // watchlistbutton
+            // 
+            this.watchlistbutton.Dock = System.Windows.Forms.DockStyle.Top;
+            this.watchlistbutton.FlatAppearance.BorderSize = 0;
+            this.watchlistbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.watchlistbutton.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold);
+            this.watchlistbutton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(230)))));
+            this.watchlistbutton.Location = new System.Drawing.Point(0, 482);
+            this.watchlistbutton.Margin = new System.Windows.Forms.Padding(0);
+            this.watchlistbutton.Name = "watchlistbutton";
+            this.watchlistbutton.Size = new System.Drawing.Size(261, 88);
+            this.watchlistbutton.TabIndex = 7;
+            this.watchlistbutton.Text = "Watch List";
+            this.watchlistbutton.UseVisualStyleBackColor = true;
+            this.watchlistbutton.Click += new System.EventHandler(this.watchlistbutton_Click);
             // 
             // highLight
             // 
@@ -351,21 +367,6 @@ namespace Sisdat_Movie_List
             this.lblvalue.Size = new System.Drawing.Size(22, 21);
             this.lblvalue.TabIndex = 13;
             this.lblvalue.Text = "...";
-            // 
-            // watchlistbutton
-            // 
-            this.watchlistbutton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.watchlistbutton.FlatAppearance.BorderSize = 0;
-            this.watchlistbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.watchlistbutton.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold);
-            this.watchlistbutton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(230)))));
-            this.watchlistbutton.Location = new System.Drawing.Point(0, 482);
-            this.watchlistbutton.Margin = new System.Windows.Forms.Padding(0);
-            this.watchlistbutton.Name = "watchlistbutton";
-            this.watchlistbutton.Size = new System.Drawing.Size(261, 88);
-            this.watchlistbutton.TabIndex = 7;
-            this.watchlistbutton.Text = "Watch List";
-            this.watchlistbutton.UseVisualStyleBackColor = true;
             // 
             // Dashboard
             // 

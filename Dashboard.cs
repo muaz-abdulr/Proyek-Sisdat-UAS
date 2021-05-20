@@ -199,6 +199,14 @@ namespace Sisdat_Movie_List
             searchForDirector.BackColor = Color.FromArgb(22, 44, 59);
         }
 
+        private void watchlistbutton_Click(object sender, EventArgs e)
+        {
+            Watchlist f2 = new Watchlist();
+            this.Hide();
+            f2.ShowDialog();
+
+        }
+
         private void searchForGenre_Leave(object sender, EventArgs e)
         {
             searchForGenre.BackColor = Color.FromArgb(22, 44, 59);
