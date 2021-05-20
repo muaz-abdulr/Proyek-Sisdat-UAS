@@ -84,6 +84,7 @@ namespace Sisdat_Movie_List
             this.updatebutton.TabIndex = 6;
             this.updatebutton.Text = "update";
             this.updatebutton.UseVisualStyleBackColor = true;
+            this.updatebutton.Click += new System.EventHandler(this.updatebutton_Click);
             // 
             // deletebutton
             // 
@@ -93,6 +94,7 @@ namespace Sisdat_Movie_List
             this.deletebutton.TabIndex = 7;
             this.deletebutton.Text = "delete";
             this.deletebutton.UseVisualStyleBackColor = true;
+            this.deletebutton.Click += new System.EventHandler(this.deletebutton_Click);
             // 
             // Watchlist
             // 

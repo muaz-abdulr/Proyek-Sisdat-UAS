@@ -28,5 +28,15 @@ namespace Sisdat_Movie_List
             this.Hide();
             f1.ShowDialog();
         }
+
+        private void updatebutton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void deletebutton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
