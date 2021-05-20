@@ -202,7 +202,6 @@ namespace Sisdat_Movie_List
         private void watchlistbutton_Click(object sender, EventArgs e)
         {
             Watchlist f2 = new Watchlist();
-            this.Hide();
             f2.ShowDialog();
 
         }
