@@ -75,16 +75,16 @@
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="DataAccess.cs" />
+    <Compile Include="MovieListDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MovieListDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Watchlist.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Watchlist.Designer.cs">
       <DependentUpon>Watchlist.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MovieListDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MovieListDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -38,32 +38,5 @@ namespace Sisdat_Movie_List
             List<RecordCollector.Genre> output = connection.Query<RecordCollector.Genre>($"exec getGenreData").ToList();
             return output;
         }
-
-        public List<RecordCollector.Movie> searchMovieData(string filmName)
-        {
-            List<RecordCollector.Movie> output = connection.Query<RecordCollector.Movie>($"select * from films where film_title LIKE '%{ filmName }%'").ToList();
-            return output;
-        }
-
-        public List<RecordCollector.Actors> searchActorsData(string ActorName)
-        {
-            List<RecordCollector.Actors> output = connection.Query<RecordCollector.Actors>($"select * from actors where actor_name LIKE '%{ ActorName }%'").ToList();
-            return output;
-        }
-
-        public List<RecordCollector.sutradara> searchDirectorsData(string DirectorName)
-        {
-            List<RecordCollector.sutradara> output = connection.Query<RecordCollector.sutradara>($"select * from directors where director_name LIKE '%{ DirectorName }%'").ToList();
-            return output;
-        }
-
-        public List<RecordCollector.Movie> searchGenreData(string GenreName)
-        {
-            List<RecordCollector.Movie> output = connection.Query<RecordCollector.Movie>($"select films.film_id, films.film_title, films.description from films inner join genres_in_films ON films.film_id = genres_in_films.film_id  inner join genres ON genres.genre_id = genres_in_films.genre_id  where genre_type LIKE '%{ GenreName }%'").ToList();
-            return output;
-        }
-
-
-
     }
 }

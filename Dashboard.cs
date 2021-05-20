@@ -33,7 +33,13 @@ namespace Sisdat_Movie_List
             dynamic x = entityID.Items[entityID.SelectedIndex];
             DescTextBox.Text = x.Bio;
         }
-
+        private void changePanelColor(Color panelColor, params Panel[] pan)
+        {
+            for(int i = 0; i < pan.Length; i++)
+            {
+                pan[i].BackColor = panelColor;
+            }
+        }
         private void searchForMovie_Click(object sender, EventArgs e)
         {
             DataAccess movieData = new DataAccess();
@@ -45,11 +51,9 @@ namespace Sisdat_Movie_List
             genrecheck = false;
             directorcheck = false;
             searchForMovie.BackColor = Color.FromArgb(35, 65, 87);
-            topLeft.BackColor = Color.FromArgb(78, 205, 196);
-            topRight.BackColor = Color.FromArgb(78, 205, 196);
+            changePanelColor(Color.FromArgb(78, 205, 196), topLeft, topRight, highLight);
             highLight.Location = searchForMovie.Location;
             highLight.Visible = true;
-            highLight.BackColor = Color.FromArgb(78, 205, 196);
             lblvalue.Text = searchForMovie.Text;
 
         }
@@ -65,11 +69,9 @@ namespace Sisdat_Movie_List
             genrecheck = false;
             directorcheck = false;
             searchForActor.BackColor = Color.FromArgb(35, 65, 87);
-            topLeft.BackColor = Color.FromArgb(255, 107, 107);
-            topRight.BackColor = Color.FromArgb(255, 107, 107);
+            changePanelColor(Color.FromArgb(255, 107, 107), topLeft, topRight, highLight);
             highLight.Location = searchForActor.Location;
             highLight.Visible = true;
-            highLight.BackColor = Color.FromArgb(255, 107, 107);
             lblvalue.Text = searchForActor.Text;
         }
         private void searchForDirector_Click(object sender, EventArgs e)
@@ -83,11 +85,9 @@ namespace Sisdat_Movie_List
             genrecheck = false;
             directorcheck = true;
             searchForDirector.BackColor = Color.FromArgb(35, 65, 87);
-            topLeft.BackColor = Color.FromArgb(255, 209, 102);
-            topRight.BackColor = Color.FromArgb(255, 209, 102);
+            changePanelColor(Color.FromArgb(255, 209, 102), topLeft, topRight, highLight);
             highLight.Location = searchForDirector.Location;
             highLight.Visible = true;
-            highLight.BackColor = Color.FromArgb(255, 209, 102);
             lblvalue.Text = searchForDirector.Text;
         }
 
@@ -102,11 +102,9 @@ namespace Sisdat_Movie_List
             genrecheck = true;
             directorcheck = false;
             searchForGenre.BackColor = Color.FromArgb(35, 65, 87);
-            topLeft.BackColor = Color.FromArgb(26, 83, 92);
-            topRight.BackColor = Color.FromArgb(26, 83, 92);
+            changePanelColor(Color.FromArgb(26, 83, 92), topLeft, topRight, highLight);
             highLight.Location = searchForGenre.Location;
             highLight.Visible = true;
-            highLight.BackColor = Color.FromArgb(26, 83, 92);
             lblvalue.Text = searchForGenre.Text;
         }
 
@@ -114,30 +112,46 @@ namespace Sisdat_Movie_List
         {
             if (filmcheck)
             {
-                DataAccess search = new DataAccess();
-                movie = search.searchMovieData(searchText.Text);
-                entityID.DataSource = movie;
+                List<RecordCollector.Movie> searched = movie.FindAll(
+                    delegate (RecordCollector.Movie x)
+                    {
+                        return x.film_title.IndexOf(searchText.Text, StringComparison.OrdinalIgnoreCase) >= 0;
+                    }
+                    );
+                entityID.DataSource = searched;
                 entityID.DisplayMember = "MovieDataID";
             }
             else if (actorcheck)
             {
-                DataAccess search = new DataAccess();
-                actor = search.searchActorsData(searchText.Text);
-                entityID.DataSource = actor;
+                List<RecordCollector.Actors> searched = actor.FindAll(
+                    delegate (RecordCollector.Actors x)
+                    {
+                        return x.actor_name.IndexOf(searchText.Text, StringComparison.OrdinalIgnoreCase) >= 0;
+                    }
+                    );
+                entityID.DataSource = searched;
                 entityID.DisplayMember = "ActorInfo";
             }
             else if (directorcheck)
             {
-                DataAccess search = new DataAccess();
-                direct = search.searchDirectorsData(searchText.Text);
-                entityID.DataSource = direct;
+                List<RecordCollector.sutradara> searched = direct.FindAll(
+                    delegate (RecordCollector.sutradara x)
+                    {
+                        return x.director_name.IndexOf(searchText.Text, StringComparison.OrdinalIgnoreCase) >= 0;
+                    }
+                    );
+                entityID.DataSource = searched;
                 entityID.DisplayMember = "DirectorInfo";
             }
             else if (genrecheck)
             {
-                DataAccess search = new DataAccess();
-                movie = search.searchGenreData(searchText.Text);
-                entityID.DataSource = movie;
+                List<RecordCollector.Movie> searched = movie.FindAll(
+                    delegate (RecordCollector.Movie x)
+                    {
+                        return x.film_title.IndexOf(searchText.Text, StringComparison.OrdinalIgnoreCase) >= 0;
+                    }
+                    );
+                entityID.DataSource = searched;
                 entityID.DisplayMember = "MovieDataID";
             }
          
