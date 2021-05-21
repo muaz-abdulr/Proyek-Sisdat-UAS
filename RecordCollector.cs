@@ -117,7 +117,20 @@ namespace Sisdat_Movie_List
             }
             
         }
-
+        public class WL
+        {
+            public int watchlistID { get; set; }
+            public int film_id { get; set; }
+            public string watchschedule { get; set; }
+            public string film_title { get; set; }
+            public string list
+            {
+                get
+                {
+                    return $"{watchschedule}\t{film_title}";
+                }
+            }
+        }
     }
 }
 
