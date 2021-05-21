@@ -74,6 +74,7 @@ namespace Sisdat_Movie_List
             highLight.Visible = true;
             lblvalue.Text = searchForActor.Text;
         }
+
         private void searchForDirector_Click(object sender, EventArgs e)
         {
             DataAccess directorData = new DataAccess();

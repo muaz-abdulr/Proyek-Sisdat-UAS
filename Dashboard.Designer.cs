@@ -220,7 +220,7 @@ namespace Sisdat_Movie_List
             this.search.FlatAppearance.BorderSize = 0;
             this.search.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.search.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.search.ForeColor = System.Drawing.Color.White;
+            this.search.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(230)))));
             this.search.Location = new System.Drawing.Point(742, 0);
             this.search.Name = "search";
             this.search.Size = new System.Drawing.Size(133, 29);
@@ -247,7 +247,7 @@ namespace Sisdat_Movie_List
             this.entityID.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(83)))), ((int)(((byte)(110)))));
             this.entityID.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.entityID.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.entityID.ForeColor = System.Drawing.Color.White;
+            this.entityID.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(230)))));
             this.entityID.FormattingEnabled = true;
             this.entityID.ItemHeight = 22;
             this.entityID.Location = new System.Drawing.Point(313, 257);
@@ -264,10 +264,10 @@ namespace Sisdat_Movie_List
             this.DescTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(83)))), ((int)(((byte)(110)))));
             this.DescTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DescTextBox.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DescTextBox.ForeColor = System.Drawing.Color.White;
+            this.DescTextBox.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(230)))));
             this.DescTextBox.Location = new System.Drawing.Point(313, 415);
             this.DescTextBox.Name = "DescTextBox";
-            this.DescTextBox.Size = new System.Drawing.Size(854, 246);
+            this.DescTextBox.Size = new System.Drawing.Size(854, 241);
             this.DescTextBox.TabIndex = 5;
             this.DescTextBox.Text = "";
             // 

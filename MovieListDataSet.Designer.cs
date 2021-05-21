@@ -2728,10 +2728,6 @@ namespace Sisdat_Movie_List {
             
             private global::System.Data.DataColumn columnfilm_id;
             
-            private global::System.Data.DataColumn columnfilm_title;
-            
-            private global::System.Data.DataColumn columndescription;
-            
             private global::System.Data.DataColumn columnwatchschedule;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2785,22 +2781,6 @@ namespace Sisdat_Movie_List {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn film_titleColumn {
-                get {
-                    return this.columnfilm_title;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn descriptionColumn {
-                get {
-                    return this.columndescription;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn watchscheduleColumn {
                 get {
                     return this.columnwatchschedule;
@@ -2844,13 +2824,11 @@ namespace Sisdat_Movie_List {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public watchlistRow AddwatchlistRow(int watchlistID, filmsRow parentfilmsRowByFK__watchlist__film___6FE99F9F, string film_title, string description, string watchschedule) {
+            public watchlistRow AddwatchlistRow(int watchlistID, filmsRow parentfilmsRowByFK__watchlist__film___6FE99F9F, System.DateTime watchschedule) {
                 watchlistRow rowwatchlistRow = ((watchlistRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         watchlistID,
                         null,
-                        film_title,
-                        description,
                         watchschedule};
                 if ((parentfilmsRowByFK__watchlist__film___6FE99F9F != null)) {
                     columnValuesArray[1] = parentfilmsRowByFK__watchlist__film___6FE99F9F[0];
@@ -2886,8 +2864,6 @@ namespace Sisdat_Movie_List {
             internal void InitVars() {
                 this.columnwatchlistID = base.Columns["watchlistID"];
                 this.columnfilm_id = base.Columns["film_id"];
-                this.columnfilm_title = base.Columns["film_title"];
-                this.columndescription = base.Columns["description"];
                 this.columnwatchschedule = base.Columns["watchschedule"];
             }
             
@@ -2898,19 +2874,12 @@ namespace Sisdat_Movie_List {
                 base.Columns.Add(this.columnwatchlistID);
                 this.columnfilm_id = new global::System.Data.DataColumn("film_id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnfilm_id);
-                this.columnfilm_title = new global::System.Data.DataColumn("film_title", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnfilm_title);
-                this.columndescription = new global::System.Data.DataColumn("description", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columndescription);
-                this.columnwatchschedule = new global::System.Data.DataColumn("watchschedule", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnwatchschedule = new global::System.Data.DataColumn("watchschedule", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnwatchschedule);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnwatchlistID}, true));
                 this.columnwatchlistID.AllowDBNull = false;
                 this.columnwatchlistID.Unique = true;
-                this.columnfilm_title.MaxLength = 40;
-                this.columndescription.MaxLength = 2147483647;
-                this.columnwatchschedule.MaxLength = 10;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5117,42 +5086,10 @@ namespace Sisdat_Movie_List {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string film_title {
+            public System.DateTime watchschedule {
                 get {
                     try {
-                        return ((string)(this[this.tablewatchlist.film_titleColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'film_title\' in table \'watchlist\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablewatchlist.film_titleColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string description {
-                get {
-                    try {
-                        return ((string)(this[this.tablewatchlist.descriptionColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'description\' in table \'watchlist\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablewatchlist.descriptionColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string watchschedule {
-                get {
-                    try {
-                        return ((string)(this[this.tablewatchlist.watchscheduleColumn]));
+                        return ((global::System.DateTime)(this[this.tablewatchlist.watchscheduleColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'watchschedule\' in table \'watchlist\' is DBNull.", e);
@@ -5184,30 +5121,6 @@ namespace Sisdat_Movie_List {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Setfilm_idNull() {
                 this[this.tablewatchlist.film_idColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Isfilm_titleNull() {
-                return this.IsNull(this.tablewatchlist.film_titleColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Setfilm_titleNull() {
-                this[this.tablewatchlist.film_titleColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsdescriptionNull() {
-                return this.IsNull(this.tablewatchlist.descriptionColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetdescriptionNull() {
-                this[this.tablewatchlist.descriptionColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8445,48 +8358,39 @@ SELECT genre_id, genre_type FROM genres WHERE (genre_id = @genre_id)";
             tableMapping.DataSetTable = "watchlist";
             tableMapping.ColumnMappings.Add("watchlistID", "watchlistID");
             tableMapping.ColumnMappings.Add("film_id", "film_id");
-            tableMapping.ColumnMappings.Add("film_title", "film_title");
-            tableMapping.ColumnMappings.Add("description", "description");
             tableMapping.ColumnMappings.Add("watchschedule", "watchschedule");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[watchlist] WHERE (([watchlistID] = @Original_watchlistID) AND ((@IsNull_film_id = 1 AND [film_id] IS NULL) OR ([film_id] = @Original_film_id)) AND ((@IsNull_film_title = 1 AND [film_title] IS NULL) OR ([film_title] = @Original_film_title)) AND ((@IsNull_watchschedule = 1 AND [watchschedule] IS NULL) OR ([watchschedule] = @Original_watchschedule)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[watchlist] WHERE (([watchlistID] = @Original_watchlistID) AND ((@IsNull_film_id = 1 AND [film_id] IS NULL) OR ([film_id] = @Original_film_id)) AND ((@IsNull_watchschedule = 1 AND [watchschedule] IS NULL) OR ([watchschedule] = @Original_watchschedule)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_watchlistID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "watchlistID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_film_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "film_id", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_film_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "film_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_film_title", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "film_title", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_film_title", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "film_title", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_watchschedule", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "watchschedule", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_watchschedule", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "watchschedule", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_watchschedule", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "watchschedule", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[watchlist] ([watchlistID], [film_id], [film_title], [description], [watchschedule]) VALUES (@watchlistID, @film_id, @film_title, @description, @watchschedule);
-SELECT watchlistID, film_id, film_title, description, watchschedule FROM watchlist WHERE (watchlistID = @watchlistID)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[watchlist] ([watchlistID], [film_id], [watchschedule]) VALUES " +
+                "(@watchlistID, @film_id, @watchschedule);\r\nSELECT watchlistID, film_id, watchsch" +
+                "edule FROM watchlist WHERE (watchlistID = @watchlistID)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@watchlistID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "watchlistID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@film_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "film_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@film_title", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "film_title", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@description", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "description", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@watchschedule", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "watchschedule", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@watchschedule", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "watchschedule", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[watchlist] SET [watchlistID] = @watchlistID, [film_id] = @film_id, [film_title] = @film_title, [description] = @description, [watchschedule] = @watchschedule WHERE (([watchlistID] = @Original_watchlistID) AND ((@IsNull_film_id = 1 AND [film_id] IS NULL) OR ([film_id] = @Original_film_id)) AND ((@IsNull_film_title = 1 AND [film_title] IS NULL) OR ([film_title] = @Original_film_title)) AND ((@IsNull_watchschedule = 1 AND [watchschedule] IS NULL) OR ([watchschedule] = @Original_watchschedule)));
-SELECT watchlistID, film_id, film_title, description, watchschedule FROM watchlist WHERE (watchlistID = @watchlistID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[watchlist] SET [watchlistID] = @watchlistID, [film_id] = @film_id, [watchschedule] = @watchschedule WHERE (([watchlistID] = @Original_watchlistID) AND ((@IsNull_film_id = 1 AND [film_id] IS NULL) OR ([film_id] = @Original_film_id)) AND ((@IsNull_watchschedule = 1 AND [watchschedule] IS NULL) OR ([watchschedule] = @Original_watchschedule)));
+SELECT watchlistID, film_id, watchschedule FROM watchlist WHERE (watchlistID = @watchlistID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@watchlistID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "watchlistID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@film_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "film_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@film_title", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "film_title", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@description", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "description", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@watchschedule", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "watchschedule", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@watchschedule", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "watchschedule", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_watchlistID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "watchlistID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_film_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "film_id", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_film_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "film_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_film_title", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "film_title", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_film_title", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "film_title", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_watchschedule", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "watchschedule", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_watchschedule", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "watchschedule", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_watchschedule", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "watchschedule", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8502,8 +8406,7 @@ SELECT watchlistID, film_id, film_title, description, watchschedule FROM watchli
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT watchlistID, film_id, film_title, description, watchschedule FROM dbo.watc" +
-                "hlist";
+            this._commandCollection[0].CommandText = "SELECT watchlistID, film_id, watchschedule FROM dbo.watchlist";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -8564,7 +8467,7 @@ SELECT watchlistID, film_id, film_title, description, watchschedule FROM watchli
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_watchlistID, global::System.Nullable<int> Original_film_id, string Original_film_title, string Original_watchschedule) {
+        public virtual int Delete(int Original_watchlistID, global::System.Nullable<int> Original_film_id, global::System.Nullable<global::System.DateTime> Original_watchschedule) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_watchlistID));
             if ((Original_film_id.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
@@ -8574,21 +8477,13 @@ SELECT watchlistID, film_id, film_title, description, watchschedule FROM watchli
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((Original_film_title == null)) {
+            if ((Original_watchschedule.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((System.DateTime)(Original_watchschedule.Value));
+            }
+            else {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_film_title));
-            }
-            if ((Original_watchschedule == null)) {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_watchschedule));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -8610,7 +8505,7 @@ SELECT watchlistID, film_id, film_title, description, watchschedule FROM watchli
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int watchlistID, global::System.Nullable<int> film_id, string film_title, string description, string watchschedule) {
+        public virtual int Insert(int watchlistID, global::System.Nullable<int> film_id, global::System.Nullable<global::System.DateTime> watchschedule) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(watchlistID));
             if ((film_id.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((int)(film_id.Value));
@@ -8618,23 +8513,11 @@ SELECT watchlistID, film_id, film_title, description, watchschedule FROM watchli
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            if ((film_title == null)) {
+            if ((watchschedule.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(watchschedule.Value));
+            }
+            else {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(film_title));
-            }
-            if ((description == null)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(description));
-            }
-            if ((watchschedule == null)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(watchschedule));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -8656,7 +8539,7 @@ SELECT watchlistID, film_id, film_title, description, watchschedule FROM watchli
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int watchlistID, global::System.Nullable<int> film_id, string film_title, string description, string watchschedule, int Original_watchlistID, global::System.Nullable<int> Original_film_id, string Original_film_title, string Original_watchschedule) {
+        public virtual int Update(int watchlistID, global::System.Nullable<int> film_id, global::System.Nullable<global::System.DateTime> watchschedule, int Original_watchlistID, global::System.Nullable<int> Original_film_id, global::System.Nullable<global::System.DateTime> Original_watchschedule) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(watchlistID));
             if ((film_id.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(film_id.Value));
@@ -8664,48 +8547,28 @@ SELECT watchlistID, film_id, film_title, description, watchschedule FROM watchli
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
-            if ((film_title == null)) {
+            if ((watchschedule.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(watchschedule.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(film_title));
-            }
-            if ((description == null)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(description));
-            }
-            if ((watchschedule == null)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(watchschedule));
-            }
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_watchlistID));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_watchlistID));
             if ((Original_film_id.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_film_id.Value));
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((Original_watchschedule.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_film_id.Value));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((System.DateTime)(Original_watchschedule.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
-            }
-            if ((Original_film_title == null)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_film_title));
-            }
-            if ((Original_watchschedule == null)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_watchschedule));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -8727,8 +8590,8 @@ SELECT watchlistID, film_id, film_title, description, watchschedule FROM watchli
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> film_id, string film_title, string description, string watchschedule, int Original_watchlistID, global::System.Nullable<int> Original_film_id, string Original_film_title, string Original_watchschedule) {
-            return this.Update(Original_watchlistID, film_id, film_title, description, watchschedule, Original_watchlistID, Original_film_id, Original_film_title, Original_watchschedule);
+        public virtual int Update(global::System.Nullable<int> film_id, global::System.Nullable<global::System.DateTime> watchschedule, int Original_watchlistID, global::System.Nullable<int> Original_film_id, global::System.Nullable<global::System.DateTime> Original_watchschedule) {
+            return this.Update(Original_watchlistID, film_id, watchschedule, Original_watchlistID, Original_film_id, Original_watchschedule);
         }
     }
     

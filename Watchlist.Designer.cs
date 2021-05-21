@@ -47,9 +47,9 @@ namespace Sisdat_Movie_List
             this.entityID.ForeColor = System.Drawing.Color.White;
             this.entityID.FormattingEnabled = true;
             this.entityID.ItemHeight = 22;
-            this.entityID.Location = new System.Drawing.Point(165, 157);
+            this.entityID.Location = new System.Drawing.Point(130, 157);
             this.entityID.Name = "entityID";
-            this.entityID.Size = new System.Drawing.Size(623, 198);
+            this.entityID.Size = new System.Drawing.Size(506, 198);
             this.entityID.TabIndex = 4;
             // 
             // topRight
@@ -59,7 +59,7 @@ namespace Sisdat_Movie_List
             this.topRight.Dock = System.Windows.Forms.DockStyle.Top;
             this.topRight.Location = new System.Drawing.Point(0, 0);
             this.topRight.Name = "topRight";
-            this.topRight.Size = new System.Drawing.Size(800, 130);
+            this.topRight.Size = new System.Drawing.Size(683, 130);
             this.topRight.TabIndex = 5;
             // 
             // title
@@ -68,7 +68,7 @@ namespace Sisdat_Movie_List
             this.title.AutoSize = true;
             this.title.Font = new System.Drawing.Font("Century Gothic", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.title.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(230)))));
-            this.title.Location = new System.Drawing.Point(246, 41);
+            this.title.Location = new System.Drawing.Point(187, 41);
             this.title.Margin = new System.Windows.Forms.Padding(0);
             this.title.Name = "title";
             this.title.Size = new System.Drawing.Size(361, 47);
@@ -78,7 +78,7 @@ namespace Sisdat_Movie_List
             // 
             // updatebutton
             // 
-            this.updatebutton.Location = new System.Drawing.Point(61, 157);
+            this.updatebutton.Location = new System.Drawing.Point(22, 157);
             this.updatebutton.Name = "updatebutton";
             this.updatebutton.Size = new System.Drawing.Size(75, 23);
             this.updatebutton.TabIndex = 6;
@@ -88,7 +88,7 @@ namespace Sisdat_Movie_List
             // 
             // deletebutton
             // 
-            this.deletebutton.Location = new System.Drawing.Point(61, 212);
+            this.deletebutton.Location = new System.Drawing.Point(22, 212);
             this.deletebutton.Name = "deletebutton";
             this.deletebutton.Size = new System.Drawing.Size(75, 23);
             this.deletebutton.TabIndex = 7;
@@ -100,7 +100,7 @@ namespace Sisdat_Movie_List
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(683, 465);
             this.Controls.Add(this.deletebutton);
             this.Controls.Add(this.updatebutton);
             this.Controls.Add(this.entityID);
