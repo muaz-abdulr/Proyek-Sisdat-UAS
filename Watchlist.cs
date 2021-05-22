@@ -87,24 +87,18 @@ namespace Sisdat_Movie_List
         //BAGIAN UI
         private void addBttn_MouseHover(object sender, EventArgs e)
         {
-            panel2.Visible = false;
-            panel4.Visible = false;
             panelhighlight.Visible = true;
-
         }
 
         private void updatebutton_MouseHover(object sender, EventArgs e)
         {
-            panel2.Visible = false;
+            
             panel4.Visible = true;
-            panelhighlight.Visible = false;
         }
 
         private void deletebutton_MouseHover(object sender, EventArgs e)
         {
             panel2.Visible = true;
-            panel4.Visible = false;
-            panelhighlight.Visible = false;
 
         }
 
