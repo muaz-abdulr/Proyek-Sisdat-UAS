@@ -32,6 +32,7 @@ namespace Sisdat_Movie_List
             movie = movData.getMovieData();
             filmList.DataSource = movie;
             filmList.DisplayMember = "MovieDataID";
+
             refreshWL();
         }
 
@@ -42,33 +43,39 @@ namespace Sisdat_Movie_List
 
         private void updatebutton_Click(object sender, EventArgs e)
         {
-            dynamic x = watchlistList.Items[watchlistList.SelectedIndex];
-            dynamic y = filmList.Items[filmList.SelectedIndex];
-            DataAccess wl = new DataAccess();
-            wl.updateWL(x.watchlistID, y.film_id, dateTimeWatchlist.Value.ToString());
-            refreshWL();
+            if (watchlistList.SelectedIndex != -1)
+            {
+                dynamic x = watchlistList.Items[watchlistList.SelectedIndex];
+                dynamic y = filmList.Items[filmList.SelectedIndex];
+                DataAccess wl = new DataAccess();
+                wl.updateWL(x.watchlistID, y.film_id, dateTimeWatchlist.Value.ToString("yyyy-MM-dd HH:mm:ss"));
+                refreshWL();
+            }
         }
 
         private void deletebutton_Click(object sender, EventArgs e)
         {
-            DataAccess wl = new DataAccess();
-            dynamic x = watchlistList.Items[watchlistList.SelectedIndex];
-            wl.deleteWL(x.watchlistID);
-            refreshWL();
+            if(watchlistList.SelectedIndex != -1)
+            {
+                DataAccess wl = new DataAccess();
+                dynamic x = watchlistList.Items[watchlistList.SelectedIndex];
+                wl.deleteWL(x.watchlistID);
+                refreshWL();
+            }
         }
 
         private void addBttn_Click(object sender, EventArgs e)
         {
             DataAccess wl = new DataAccess();
             dynamic films = filmList.Items[filmList.SelectedIndex];
-            wl.insertWL(films.film_id, dateTimeWatchlist.Text);
+            wl.insertWL(films.film_id, dateTimeWatchlist.Value.ToString("yyyy-MM-dd HH:mm:ss"));
             refreshWL();
         }
 
         private void watchlistList_SelectedIndexChanged(object sender, EventArgs e)
         {
             dynamic x = watchlistList.Items[watchlistList.SelectedIndex];
-            dateTimeWatchlist.Value = DateTime.Parse(x.watchschedule);
+            dateTimeWatchlist.Value = DateTime.ParseExact(x.timeFormatted, "M/d/yyyy H:m:s", null);
             filmList.SelectedItem = movie.Find(
                 delegate (RecordCollector.Movie mv)
                 {
@@ -76,7 +83,8 @@ namespace Sisdat_Movie_List
                 }
                 );
         }
-
+        
+        //BAGIAN UI
         private void addBttn_MouseHover(object sender, EventArgs e)
         {
             panel2.Visible = false;
@@ -114,5 +122,6 @@ namespace Sisdat_Movie_List
         {
             panel4.Visible = false;
         }
+        //BAGIAN UI
     }
 }

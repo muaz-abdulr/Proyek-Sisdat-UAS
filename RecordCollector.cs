@@ -121,13 +121,20 @@ namespace Sisdat_Movie_List
         {
             public int watchlistID { get; set; }
             public int film_id { get; set; }
-            public string watchschedule { get; set; }
+            public DateTime watchschedule { get; set; }
             public string film_title { get; set; }
             public string list
             {
                 get
                 {
-                    return $"{watchschedule}\t{film_title}";
+                    return $"{watchschedule.ToString("HH:mm:ss dd-MM-yyyy")}\t{film_title}";
+                }
+            }
+            public string timeFormatted
+            {
+                get
+                {
+                    return $"{watchschedule.Month}/{watchschedule.Day}/{watchschedule.Year} {watchschedule.Hour}:{watchschedule.Minute}:{watchschedule.Second}";
                 }
             }
         }

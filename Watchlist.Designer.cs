@@ -71,7 +71,7 @@ namespace Sisdat_Movie_List
             this.watchlistList.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(83)))), ((int)(((byte)(110)))));
             this.watchlistList.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.watchlistList.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.watchlistList.ForeColor = System.Drawing.SystemColors.Window;
+            this.watchlistList.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(230)))));
             this.watchlistList.FormattingEnabled = true;
             this.watchlistList.ItemHeight = 21;
             this.watchlistList.Location = new System.Drawing.Point(14, 300);
@@ -129,15 +129,16 @@ namespace Sisdat_Movie_List
             this.dateTimeWatchlist.CalendarTitleBackColor = System.Drawing.SystemColors.ButtonFace;
             this.dateTimeWatchlist.CalendarTitleForeColor = System.Drawing.Color.AliceBlue;
             this.dateTimeWatchlist.CalendarTrailingForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dateTimeWatchlist.CustomFormat = "yyyy-MM-dd hh:mm:ss";
+            this.dateTimeWatchlist.CustomFormat = "HH:mm:ss dd-MM-yyyy";
             this.dateTimeWatchlist.Dock = System.Windows.Forms.DockStyle.Left;
             this.dateTimeWatchlist.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.dateTimeWatchlist.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dateTimeWatchlist.Location = new System.Drawing.Point(0, 0);
             this.dateTimeWatchlist.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dateTimeWatchlist.Name = "dateTimeWatchlist";
-            this.dateTimeWatchlist.Size = new System.Drawing.Size(186, 27);
+            this.dateTimeWatchlist.Size = new System.Drawing.Size(210, 27);
             this.dateTimeWatchlist.TabIndex = 9;
+            this.dateTimeWatchlist.Value = new System.DateTime(2021, 5, 6, 0, 0, 0, 0);
             // 
             // addBttn
             // 
