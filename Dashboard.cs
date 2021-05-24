@@ -16,22 +16,46 @@ namespace Sisdat_Movie_List
         List<RecordCollector.Actors> actor = new List<RecordCollector.Actors>();
         List<RecordCollector.sutradara> direct = new List<RecordCollector.sutradara>();
         List<RecordCollector.Genre> genre = new List<RecordCollector.Genre>();
+        ListBox new_listbox = new ListBox();
 
-        bool filmcheck = false;
-        bool actorcheck = false;
-        bool genrecheck = false;
-        bool directorcheck = false;
-        int mouseX, mouseY;
-        bool mousePressed;
         public Dashboard()
         {
             InitializeComponent();
+            this.Controls.Add(new_listbox);
+            new_listbox.Hide();
+            new_listbox.BringToFront();
         }
 
         private void entityID_SelectedIndexChanged(object sender, EventArgs e)
         {
-            dynamic x = entityID.Items[entityID.SelectedIndex];
-            DescTextBox.Text = x.Bio;
+            int controlCount = this.Controls.Count;
+            if (entityID.SelectedItem is string)
+            {
+                new_listbox.Location = DescTextBox.Location;
+                new_listbox.Size = DescTextBox.Size;
+                new_listbox.Anchor = DescTextBox.Anchor;
+                new_listbox.BackColor = DescTextBox.BackColor;
+                new_listbox.ForeColor = DescTextBox.ForeColor;
+                new_listbox.BorderStyle = DescTextBox.BorderStyle;
+                new_listbox.Font = DescTextBox.Font;
+                DescTextBox.Hide();
+                new_listbox.Show();
+                List<RecordCollector.Genre> genreSelected = genre.FindAll(
+                    delegate (RecordCollector.Genre x)
+                    {
+                        return x.genre_type == entityID.SelectedItem.ToString();
+                    }
+                    );
+                new_listbox.DataSource = genreSelected;
+                new_listbox.DisplayMember = "FilmTitle";
+            }
+            else
+            {
+                new_listbox.Hide();
+                DescTextBox.Show();
+                dynamic x = entityID.Items[entityID.SelectedIndex];
+                DescTextBox.Text = x.Bio;
+            }
         }
         private void changePanelColor(Color panelColor, params Panel[] pan)
         {
@@ -40,16 +64,13 @@ namespace Sisdat_Movie_List
                 pan[i].BackColor = panelColor;
             }
         }
+
         private void searchForMovie_Click(object sender, EventArgs e)
         {
             DataAccess movieData = new DataAccess();
             movie = movieData.getMovieData();
             entityID.DataSource = movie;
             entityID.DisplayMember = "MovieDataID";
-            filmcheck = true;
-            actorcheck = false;
-            genrecheck = false;
-            directorcheck = false;
             searchForMovie.BackColor = Color.FromArgb(35, 65, 87);
             changePanelColor(Color.FromArgb(78, 205, 196), topLeft, topRight, highLight);
             highLight.Location = searchForMovie.Location;
@@ -64,10 +85,6 @@ namespace Sisdat_Movie_List
             actor = actorData.getActorsData();
             entityID.DataSource = actor;
             entityID.DisplayMember = "ActorInfo";
-            filmcheck = false;
-            actorcheck = true;
-            genrecheck = false;
-            directorcheck = false;
             searchForActor.BackColor = Color.FromArgb(35, 65, 87);
             changePanelColor(Color.FromArgb(255, 107, 107), topLeft, topRight, highLight);
             highLight.Location = searchForActor.Location;
@@ -81,10 +98,6 @@ namespace Sisdat_Movie_List
             direct = directorData.getDirectorsData();
             entityID.DataSource = direct;
             entityID.DisplayMember = "DirectorInfo";
-            filmcheck = false;
-            actorcheck = false;
-            genrecheck = false;
-            directorcheck = true;
             searchForDirector.BackColor = Color.FromArgb(35, 65, 87);
             changePanelColor(Color.FromArgb(255, 209, 102), topLeft, topRight, highLight);
             highLight.Location = searchForDirector.Location;
@@ -96,12 +109,7 @@ namespace Sisdat_Movie_List
         {
             DataAccess genreData = new DataAccess();
             genre = genreData.getGenreData();
-            entityID.DataSource = genre;
-            entityID.DisplayMember = "GenresInfo";
-            filmcheck = false;
-            actorcheck = false;
-            genrecheck = true;
-            directorcheck = false;
+            entityID.DataSource = genre.Select(x => x.genre_type).Distinct().ToList();
             searchForGenre.BackColor = Color.FromArgb(35, 65, 87);
             changePanelColor(Color.FromArgb(26, 83, 92), topLeft, topRight, highLight);
             highLight.Location = searchForGenre.Location;
@@ -111,7 +119,7 @@ namespace Sisdat_Movie_List
 
         private void search_Click(object sender, EventArgs e)
         {
-            if (filmcheck)
+            if (entityID.SelectedItem is RecordCollector.Movie)
             {
                 List<RecordCollector.Movie> searched = movie.FindAll(
                     delegate (RecordCollector.Movie x)
@@ -122,7 +130,7 @@ namespace Sisdat_Movie_List
                 entityID.DataSource = searched;
                 entityID.DisplayMember = "MovieDataID";
             }
-            else if (actorcheck)
+            else if (entityID.SelectedItem is RecordCollector.Actors)
             {
                 List<RecordCollector.Actors> searched = actor.FindAll(
                     delegate (RecordCollector.Actors x)
@@ -133,7 +141,7 @@ namespace Sisdat_Movie_List
                 entityID.DataSource = searched;
                 entityID.DisplayMember = "ActorInfo";
             }
-            else if (directorcheck)
+            else if (entityID.SelectedItem is RecordCollector.sutradara)
             {
                 List<RecordCollector.sutradara> searched = direct.FindAll(
                     delegate (RecordCollector.sutradara x)
@@ -144,7 +152,7 @@ namespace Sisdat_Movie_List
                 entityID.DataSource = searched;
                 entityID.DisplayMember = "DirectorInfo";
             }
-            else if (genrecheck)
+            else if (entityID.SelectedItem is RecordCollector.Genre)
             {
                 DataAccess search = new DataAccess();
                 movie = search.searchGenreData(searchText.Text);
@@ -153,6 +161,10 @@ namespace Sisdat_Movie_List
             }
          
         }
+
+        //Border Panel
+        int mouseX, mouseY;
+        bool mousePressed;
 
         private void borderPanel_MouseDown(object sender, MouseEventArgs e)
         {
@@ -168,6 +180,7 @@ namespace Sisdat_Movie_List
                 this.SetDesktopLocation(MousePosition.X - mouseX, MousePosition.Y - mouseY);
             }
         }
+
         private void borderPanel_MouseUp(object sender, MouseEventArgs e)
         {
             mousePressed = false;
@@ -194,6 +207,7 @@ namespace Sisdat_Movie_List
         {
             this.WindowState = FormWindowState.Minimized;
         }
+        //Border Panel
 
         private void searchForMovie_Leave(object sender, EventArgs e)
         {
@@ -210,17 +224,16 @@ namespace Sisdat_Movie_List
             searchForDirector.BackColor = Color.FromArgb(22, 44, 59);
         }
 
+        private void searchForGenre_Leave(object sender, EventArgs e)
+        {
+            searchForGenre.BackColor = Color.FromArgb(22, 44, 59);
+        }
+
         private void watchlistbutton_Click(object sender, EventArgs e)
         {
             Watchlist f2 = new Watchlist();
             f2.ShowDialog();
 
         }
-
-        private void searchForGenre_Leave(object sender, EventArgs e)
-        {
-            searchForGenre.BackColor = Color.FromArgb(22, 44, 59);
-        }
-
     }
 }

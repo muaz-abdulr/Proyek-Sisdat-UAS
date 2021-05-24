@@ -52,7 +52,6 @@ namespace Sisdat_Movie_List
             this.panel4 = new System.Windows.Forms.Panel();
             this.labelsearch = new System.Windows.Forms.Label();
             this.lblvalue = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.sideMenu.SuspendLayout();
             this.topRight.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -369,23 +368,12 @@ namespace Sisdat_Movie_List
             this.lblvalue.TabIndex = 13;
             this.lblvalue.Text = "...";
             // 
-            // panel3
-            // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(83)))), ((int)(((byte)(110)))));
-            this.panel3.Location = new System.Drawing.Point(1037, 364);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(156, 5);
-            this.panel3.TabIndex = 11;
-            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(241)))), ((int)(((byte)(230)))));
             this.ClientSize = new System.Drawing.Size(1205, 696);
-            this.Controls.Add(this.panel3);
             this.Controls.Add(this.lblvalue);
             this.Controls.Add(this.labelsearch);
             this.Controls.Add(this.panel1);
@@ -437,7 +425,6 @@ namespace Sisdat_Movie_List
         private System.Windows.Forms.Label labelsearch;
         private System.Windows.Forms.Label lblvalue;
         private System.Windows.Forms.Button watchlistbutton;
-        private System.Windows.Forms.Panel panel3;
     }
 }
 
